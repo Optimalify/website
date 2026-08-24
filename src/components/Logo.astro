@@ -1,0 +1,15 @@
+---
+interface Props {size?: number}
+const {size = 32} = Astro.props;
+---
+<span class="logo" style={`--s:${size}px`} aria-hidden="true">O</span>
+<style>
+  .logo {
+    width: var(--s); height: var(--s); flex: 0 0 var(--s);
+    display: grid; place-items: center;
+    border-radius: calc(var(--s) * 0.29);
+    background: var(--brand-gradient);
+    color: #fff; font-weight: 800; letter-spacing: 0;
+    font-size: calc(var(--s) * 0.55); line-height: 1;
+  }
+</style>

@@ -1,0 +1,133 @@
+---
+import '../styles/global.css';
+import {SITE, installHref, installLabel} from '../config';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Page-specific <title>; the home page uses the bare brand name. */
+  bare?: boolean;
+}
+
+const {title, description = SITE.description, bare = false} = Astro.props;
+const pageTitle = bare ? title : `${title} — ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '') || '/', SITE.url).href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/img/og.png', SITE.url).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#4f46e5" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap head-inner">
+        <a href="/" class="brand" aria-label={`${SITE.name} home`}>
+          <Logo size={30} />
+          <span>{SITE.name}</span>
+        </a>
+        <nav class="head-nav">
+          <a href="/#features">Features</a>
+          <a href="/#how">How it works</a>
+          <a href="/help">Help Center</a>
+          <a href={installHref} class="btn btn-primary btn-sm">{installLabel}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="site-foot">
+      <div class="wrap foot-inner">
+        <div class="foot-brand">
+          <a href="/" class="brand"><Logo size={26} /><span>{SITE.name}</span></a>
+          <p class="foot-note">
+            Blocks for Shopify’s new customer accounts — banners, profile capture, trust
+            badges, payment icons and support links.
+          </p>
+        </div>
+        <div class="foot-cols">
+          <div>
+            <h4>Product</h4>
+            <a href="/#features">Features</a>
+            <a href="/#how">How it works</a>
+            <a href="/#faq">FAQ</a>
+          </div>
+          <div>
+            <h4>Help Center</h4>
+            <a href="/help/getting-started">Getting started</a>
+            <a href="/help/add-blocks-in-editor">Add blocks</a>
+            <a href="/help">All guides</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+            <a href="/llms.txt">llms.txt</a>
+          </div>
+        </div>
+      </div>
+      <div class="wrap foot-legal">
+        <span>© {new Date().getFullYear()} {SITE.name}</span>
+        <span>Not affiliated with Shopify Inc.</span>
+      </div>
+    </footer>
+
+    <style>
+      .site-head {
+        position: sticky; top: 0; z-index: 50;
+        background: color-mix(in srgb, var(--page) 88%, transparent);
+        backdrop-filter: saturate(160%) blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .head-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 24px; }
+      .brand {
+        display: inline-flex; align-items: center; gap: 10px;
+        color: var(--ink); font-weight: 750; font-size: 1.06rem; letter-spacing: -0.02em;
+      }
+      .brand:hover { text-decoration: none; }
+      .head-nav { display: flex; align-items: center; gap: 26px; }
+      .head-nav a { color: var(--ink-2); font-size: 0.95rem; font-weight: 550; }
+      .head-nav a:hover { color: var(--brand-600); text-decoration: none; }
+      .btn-sm { padding: 9px 18px; font-size: 0.9rem; }
+      .head-nav .btn-primary { color: #fff; }
+
+      .site-foot { border-top: 1px solid var(--line); background: var(--surface-2); margin-top: 40px; }
+      .foot-inner > * { min-width: 0; }
+      .foot-inner {
+        display: grid; grid-template-columns: 1.4fr 2fr; gap: 48px;
+        padding-top: 56px; padding-bottom: 40px;
+      }
+      .foot-note { color: var(--muted); font-size: 0.92rem; margin-top: 14px; max-width: 34ch; }
+      .foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+      .foot-cols h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; font-weight: 650; }
+      .foot-cols a { display: block; color: var(--ink-2); font-size: 0.93rem; padding: 5px 0; }
+      .foot-legal {
+        display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+        border-top: 1px solid var(--line); padding-top: 20px; padding-bottom: 32px;
+        color: var(--muted); font-size: 0.85rem;
+      }
+
+      @media (max-width: 860px) {
+        .foot-inner { grid-template-columns: 1fr; gap: 36px; }
+        .head-nav a:not(.btn) { display: none; }
+      }
+      @media (max-width: 520px) {
+        .foot-cols { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+  </body>
+</html>

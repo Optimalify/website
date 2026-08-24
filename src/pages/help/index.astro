@@ -1,0 +1,10 @@
+---
+import {getCollection, render} from 'astro:content';
+import HelpLayout from '../../layouts/HelpLayout.astro';
+
+const entry = (await getCollection('help')).find((e) => e.id === 'index')!;
+const {Content} = await render(entry);
+---
+<HelpLayout title={entry.data.title} description={entry.data.description} slug="index">
+  <Content />
+</HelpLayout>

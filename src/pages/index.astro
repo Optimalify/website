@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AccountMock from '../components/AccountMock.astro';
+import {SITE, installHref, installLabel} from '../config';
+
+const blocks = [
+  {
+    icon: '📣',
+    name: 'Banner',
+    text: 'Announcements on the Orders and Order status pages — sales, shipping notices, policy updates. Auto-translated into your customers’ languages.',
+    href: '/help/banner',
+  },
+  {
+    icon: '🎯',
+    name: 'Targeting',
+    text: 'Show a banner only to the customers who should see it — by customer tag, birthday month, order status, or a schedule.',
+    href: '/help/banner-targeting',
+  },
+  {
+    icon: '🧾',
+    name: 'Invoice download',
+    text: 'A Download-invoice PDF action right in the order menu, so customers stop emailing you for one.',
+    href: '/help/invoice',
+  },
+  {
+    icon: '💬',
+    name: 'Support',
+    text: 'Email, phone, WhatsApp, help centre and “report a problem” links in the footer of every account page.',
+    href: '/help/support',
+  },
+  {
+    icon: '🛡️',
+    name: 'Trust badges',
+    text: 'Secure-checkout, money-back, fast-shipping and custom badges on the Order status page, where shoppers track delivery.',
+    href: '/help/trust-badges',
+  },
+  {
+    icon: '💳',
+    name: 'Payment icons',
+    text: 'The payment methods you accept, shown as a tidy row of brand icons across the account pages.',
+    href: '/help/payment-icons',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do I need to edit my theme?',
+    a: 'No. You configure a block in the Optimalify admin, then place it on the page in Shopify’s customer account editor. No theme code, no developer.',
+  },
+  {
+    q: 'Does this work with the new customer accounts?',
+    a: 'That’s the only thing it works with. Optimalify is built on Shopify’s Customer Account UI Extensions — the surface that replaced legacy accounts.',
+  },
+  {
+    q: 'Will my banners be translated?',
+    a: 'Yes. A banner’s heading, message and button label are auto-translated into your customers’ languages, and you can review or adjust every string on the Translations page.',
+  },
+  {
+    q: 'Does Optimalify collect customer data?',
+    a: 'Banner, Support, Trust badges and Payment icons collect nothing — they only display what you configure. Profile capture stores what customers voluntarily enter (birthday, size, preferences) as metafields on their own customer record.',
+  },
+  {
+    q: 'Why isn’t my block showing?',
+    a: 'Almost always one of two things: the entry is still Draft rather than Active, or the block hasn’t been added and saved in the customer account editor. The troubleshooting guide walks through the rest.',
+  },
+];
+---
+
+<BaseLayout title={`${SITE.name} — ${SITE.tagline}`} bare>
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow on-brand">For Shopify customer accounts</span>
+        <h1>Meet customers<br />where they sign in</h1>
+        <p class="hero-lede">
+          Banners, profile capture, trust badges, payment icons and support — right on the
+          account pages your shoppers already visit. No theme code.
+        </p>
+        <div class="hero-cta">
+          <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
+          <a href="/help/getting-started" class="btn btn-on-brand-ghost">See how it works</a>
+        </div>
+        <ul class="hero-ticks">
+          <li>Six blocks, one app</li>
+          <li>Auto-translated copy</li>
+          <li>Set up in minutes</li>
+        </ul>
+      </div>
+      <div class="hero-mock">
+        <AccountMock variant="orders" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why now ──────────────────────────────────────────────────────── -->
+  <section class="section why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why now</span>
+        <h2>Legacy customer accounts are gone.<br />These are the pages that replaced them.</h2>
+        <p class="lede">
+          Shopify retired legacy accounts and moved every store onto the new customer
+          account pages. They’re clean, fast — and, out of the box, almost empty.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article>
+          <h3>A page every buyer visits</h3>
+          <p>Order tracking pulls shoppers back to their account again and again. It’s the one post-purchase page you can count on being seen.</p>
+        </article>
+        <article>
+          <h3>And nothing on it is yours</h3>
+          <p>No announcement, no contact details, no reassurance — nowhere to say the thing you’d say if you were standing there.</p>
+        </article>
+        <article>
+          <h3>Optimalify fills the gap</h3>
+          <p>Purpose-built blocks for exactly this surface. You keep Shopify’s pages; you just get to put something on them.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blocks ───────────────────────────────────────────────────────── -->
+  <section class="section blocks" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The blocks</span>
+        <h2>Six things to add, all in one app</h2>
+        <p class="lede">Turn on what you need. Each block is configured in the app and placed wherever you want it in Shopify’s editor.</p>
+      </div>
+      <div class="block-grid">
+        {blocks.map((b) => (
+          <a class="block-card" href={b.href}>
+            <span class="block-icon">{b.icon}</span>
+            <h3>{b.name}</h3>
+            <p>{b.text}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Deep dives ───────────────────────────────────────────────────── -->
+  <section class="section feature alt">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <span class="eyebrow">Trust badges</span>
+        <h2>Build confidence at a glance</h2>
+        <p class="lede">
+          Reassure shoppers with secure-checkout, money-back, shipping and authenticity
+          badges — right on the order status page, while they’re tracking delivery and
+          wondering whether the parcel is really coming.
+        </p>
+        <ul class="ticks">
+          <li>Four ready-made badges, or write your own</li>
+          <li>Swap any icon for a logo from your store’s Files</li>
+          <li>Support links in the footer of every account page</li>
+        </ul>
+        <a href="/help/trust-badges" class="text-link">Read the trust badges guide →</a>
+      </div>
+      <div class="feature-mock"><AccountMock variant="status" /></div>
+    </div>
+  </section>
+
+  <section class="section feature">
+    <div class="wrap feature-grid reverse">
+      <div class="feature-copy">
+        <span class="eyebrow">Profile capture</span>
+        <h2>Learn what your customers want</h2>
+        <p class="lede">
+          Collect birthday and contact preferences right on the account page. Answers save
+          to each customer as metafields, so your segments and flows get personal — zero-party
+          data, given willingly.
+        </p>
+        <ul class="ticks">
+          <li>Birthday, preferred size, communication preferences</li>
+          <li>Saved on the customer record, visible in admin</li>
+          <li>Nothing collected that the customer didn’t type</li>
+        </ul>
+        <a href="/help/profile" class="text-link">Read the profile capture guide →</a>
+      </div>
+      <div class="feature-mock"><AccountMock variant="profile" /></div>
+    </div>
+  </section>
+
+  <!-- ── How it works ─────────────────────────────────────────────────── -->
+  <section class="section how" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Configure in the app, place in the editor</h2>
+        <p class="lede">That’s the whole model. Two steps, and no code in either of them.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="num">1</span>
+          <h3>Configure the block</h3>
+          <p>Shopify admin → <strong>Apps → Optimalify → Blocks</strong>. Open a block, fill in the content, set it to <strong>Active</strong>, save.</p>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <h3>Place it on your pages</h3>
+          <p>Open the <strong>customer account editor</strong>, drop the Optimalify block where you want it, and save. It’s live for signed-in customers straight away.</p>
+        </li>
+      </ol>
+      <p class="how-foot">
+        Stuck on step two? <a href="/help/add-blocks-in-editor">Adding blocks in the editor</a> has screenshots of every spot a block can go.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions merchants ask first</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="faq-foot">
+        More in the <a href="/help/faq-troubleshooting">full FAQ &amp; troubleshooting guide</a>, or email
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Put something on the page your customers already open</h2>
+      <p>Six blocks, no theme code, live in an afternoon.</p>
+      <div class="hero-cta">
+        <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
+        <a href="/help" class="btn btn-on-brand-ghost">Browse the Help Center</a>
+      </div>
+    </div>
+  </section>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {'@type': 'Answer', text: f.a},
+      })),
+    })}
+  />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero { background: var(--brand-gradient); color: #fff; padding: 76px 0 96px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero-grid > *, .feature-grid > * { min-width: 0; }
+  .hero h1 { margin: 20px 0 18px; }
+  .hero-lede { font-size: 1.16rem; color: rgba(255, 255, 255, 0.9); max-width: 46ch; line-height: 1.6; }
+  .eyebrow.on-brand { background: rgba(255, 255, 255, 0.16); color: #fff; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .hero-ticks { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; padding: 0; margin: 28px 0 0; }
+  .hero-ticks li { font-size: 0.9rem; color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; gap: 7px; }
+  .hero-ticks li::before { content: '✓'; font-weight: 700; color: #fff; }
+  .hero-mock { max-width: 520px; justify-self: end; width: 100%; }
+
+  /* ── Why ── */
+  .why { background: var(--page); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why-grid article {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 26px 24px;
+  }
+  .why-grid h3 { margin-bottom: 10px; }
+  .why-grid p { color: var(--muted); font-size: 0.97rem; }
+
+  /* ── Blocks ── */
+  .blocks { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .block-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .block-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px 22px; display: flex; flex-direction: column; gap: 10px;
+    color: inherit; box-shadow: var(--shadow-sm);
+    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  }
+  .block-card:hover {
+    text-decoration: none; transform: translateY(-3px);
+    box-shadow: var(--shadow-md); border-color: var(--brand-500);
+  }
+  .block-icon {
+    width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft);
+    display: grid; place-items: center; font-size: 20px; margin-bottom: 4px;
+  }
+  .block-card p { color: var(--muted); font-size: 0.95rem; flex: 1; }
+  .more { color: var(--brand-600); font-weight: 600; font-size: 0.9rem; margin-top: 6px; }
+
+  /* ── Feature deep dives ── */
+  .feature.alt { background: var(--page); }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .feature-grid.reverse .feature-copy { order: 2; }
+  .feature-copy h2 { margin: 18px 0 16px; }
+  .feature-mock { max-width: 500px; width: 100%; }
+  .ticks { list-style: none; padding: 0; margin: 24px 0 26px; display: grid; gap: 11px; }
+  .ticks li { display: flex; gap: 11px; color: var(--ink-2); font-size: 0.97rem; }
+  .ticks li::before {
+    content: '✓'; color: var(--brand-600); font-weight: 800; flex: 0 0 auto;
+  }
+  .text-link { font-weight: 600; }
+
+  /* ── How ── */
+  .how { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; counter-reset: s; }
+  .steps li {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px 28px; position: relative;
+  }
+  .num {
+    display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
+    background: var(--brand-gradient); color: #fff; font-weight: 750; margin-bottom: 16px;
+  }
+  .steps h3 { margin-bottom: 8px; }
+  .steps p { color: var(--muted); font-size: 0.97rem; }
+  .how-foot { text-align: center; margin-top: 28px; color: var(--muted); font-size: 0.95rem; }
+
+  /* ── FAQ ── */
+  .faq-wrap { max-width: 760px; }
+  .faq-list { display: grid; gap: 10px; }
+  .faq-list details {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 4px 22px;
+  }
+  .faq-list summary {
+    cursor: pointer; list-style: none; padding: 16px 0; font-weight: 650;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: '+'; color: var(--brand-600); font-size: 1.3rem; font-weight: 500; }
+  .faq-list details[open] summary::after { content: '–'; }
+  .faq-list details p { color: var(--muted); font-size: 0.97rem; padding: 0 0 18px; margin-top: -2px; }
+  .faq-foot { text-align: center; margin-top: 26px; color: var(--muted); font-size: 0.93rem; }
+
+  /* ── CTA ── */
+  .cta { background: var(--brand-gradient); color: #fff; padding: 84px 0; }
+  .cta-inner { text-align: center; max-width: 700px; }
+  .cta-inner { margin-inline: auto; }
+  .cta-inner p { color: rgba(255, 255, 255, 0.88); margin-top: 14px; font-size: 1.06rem; }
+  .cta .hero-cta { justify-content: center; }
+
+  @media (max-width: 960px) {
+    .hero-grid, .feature-grid { grid-template-columns: 1fr; gap: 44px; }
+    .feature-grid.reverse .feature-copy { order: 0; }
+    .hero-mock, .feature-mock { justify-self: start; max-width: 560px; }
+    .why-grid, .block-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 56px 0 68px; }
+    .why-grid, .block-grid { grid-template-columns: 1fr; }
+  }
+</style>

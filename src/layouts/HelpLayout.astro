@@ -1,0 +1,127 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import {SITE} from '../config';
+import {getCollection} from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Collection id of the current article, so the sidebar can mark it. */
+  slug: string;
+}
+const {title, description, slug} = Astro.props;
+
+const articles = (await getCollection('help')).sort((a, b) => a.data.order - b.data.order);
+const isHome = slug === 'index';
+const rawHref = isHome ? '/help/index.md' : `/help/${slug}.md`;
+---
+
+<BaseLayout title={`${title} — Help Center`} description={description}>
+  <div class="help-shell wrap">
+    <aside class="help-nav" aria-label="Help Center articles">
+      <p class="nav-title"><a href="/help">Help Center</a></p>
+      <nav>
+        {articles
+          .filter((a) => a.id !== 'index')
+          .map((a) => (
+            <a href={`/help/${a.id}`} class={a.id === slug ? 'on' : ''}>
+              {a.data.title}
+            </a>
+          ))}
+      </nav>
+      <p class="nav-help">
+        Need a hand?<br />
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+      </p>
+    </aside>
+
+    <article class="help-body">
+      <header class="help-head">
+        {!isHome && <p class="crumb"><a href="/help">← Help Center</a></p>}
+        <h1>{title}</h1>
+        <p class="lede">{description}</p>
+        <a class="raw-link" href={rawHref}>View as Markdown ↗</a>
+      </header>
+      <div class="prose"><slot /></div>
+      <footer class="help-foot">
+        <p>Still stuck? Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> with your store URL, the block, and a screenshot.</p>
+      </footer>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .help-shell {
+    display: grid; grid-template-columns: 232px minmax(0, 1fr);
+    gap: 56px; padding-top: 48px; padding-bottom: 72px; align-items: start;
+  }
+
+  .help-nav { position: sticky; top: 90px; }
+  .nav-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 650; margin-bottom: 12px; }
+  .nav-title a { color: inherit; }
+  .help-nav nav { display: grid; gap: 1px; border-left: 2px solid var(--line); }
+  .help-nav nav a {
+    color: var(--ink-2); font-size: 0.93rem; padding: 6px 0 6px 14px;
+    margin-left: -2px; border-left: 2px solid transparent;
+  }
+  .help-nav nav a:hover { color: var(--brand-600); text-decoration: none; }
+  .help-nav nav a.on { color: var(--brand-600); font-weight: 650; border-left-color: var(--brand-600); }
+  .nav-help { margin-top: 28px; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  .help-body { max-width: 76ch; }
+  .crumb { font-size: 0.9rem; margin-bottom: 14px; }
+  .help-head { border-bottom: 1px solid var(--line); padding-bottom: 26px; margin-bottom: 32px; }
+  .help-head h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); }
+  .help-head .lede { margin-top: 12px; font-size: 1.03rem; }
+  .raw-link {
+    display: inline-block; margin-top: 18px; font-size: 0.82rem; font-weight: 600;
+    color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px;
+  }
+  .raw-link:hover { color: var(--brand-600); border-color: var(--brand-500); text-decoration: none; }
+
+  .help-foot {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 0.93rem;
+  }
+
+  @media (max-width: 900px) {
+    .help-shell { grid-template-columns: 1fr; gap: 32px; }
+    .help-nav { position: static; }
+    .help-nav nav { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; border-left: none; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .help-nav nav a { border-left: none; border-bottom: 2px solid transparent; padding: 6px 14px 8px 0; white-space: nowrap; }
+    .help-nav nav a.on { border-left-color: transparent; border-bottom-color: var(--brand-600); }
+    .nav-help { display: none; }
+  }
+</style>
+
+<style is:global>
+  /* Markdown output. Scoped by .prose so it can't leak into the marketing pages. */
+  .prose { color: var(--ink-2); }
+  .prose > * + * { margin-top: 1.1em; }
+  .prose h2 { font-size: 1.42rem; margin-top: 2.2em; margin-bottom: .1em; color: var(--ink); scroll-margin-top: 90px; }
+  .prose h3 { font-size: 1.1rem; margin-top: 1.8em; margin-bottom: .1em; color: var(--ink); scroll-margin-top: 90px; }
+  .prose ul, .prose ol { padding-left: 1.35em; }
+  .prose li + li { margin-top: .45em; }
+  .prose li::marker { color: var(--muted); }
+  .prose strong { color: var(--ink); font-weight: 650; }
+  .prose code {
+    background: var(--surface-3); border: 1px solid var(--line);
+    padding: 1px 6px; border-radius: 6px; font-size: 0.87em; font-family: var(--font-mono);
+  }
+  .prose pre {
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 18px; overflow-x: auto; font-size: 0.88rem;
+  }
+  .prose pre code { background: none; border: none; padding: 0; }
+  .prose blockquote {
+    margin: 1.4em 0; padding: 14px 20px; background: var(--surface-2);
+    border-left: 3px solid var(--brand-500); border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .prose blockquote > * + * { margin-top: .8em; }
+  .prose .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .prose table { width: 100%; border-collapse: collapse; font-size: 0.94rem; min-width: 460px; }
+  .prose th, .prose td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+  .prose th { background: var(--surface-2); font-weight: 650; color: var(--ink); }
+  .prose hr { border: none; border-top: 1px solid var(--line); margin: 2.4em 0; }
+  .prose img { border: 1px solid var(--line); border-radius: var(--radius); margin: 1.4em 0; }
+</style>

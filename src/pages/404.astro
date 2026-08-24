@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {SITE} from '../config';
+---
+<BaseLayout title="Page not found" description="That page doesn’t exist.">
+  <section class="nf wrap">
+    <span class="eyebrow">404</span>
+    <h1>That page doesn’t exist</h1>
+    <p class="lede">
+      It may have moved. Try the <a href="/help">Help Center</a>, or head back
+      <a href="/">home</a>.
+    </p>
+    <p class="mail">Still lost? <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
+  </section>
+</BaseLayout>
+<style>
+  .nf { padding: 110px 24px 140px; max-width: 620px; text-align: center; }
+  .nf h1 { margin: 20px 0 16px; }
+  .mail { margin-top: 26px; color: var(--muted); font-size: 0.93rem; }
+</style>
