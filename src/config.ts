@@ -10,7 +10,7 @@ export const SITE = {
   supportEmail: 'mia@optimalify.org',
   // Fill in once the App Store listing is public; until then every install CTA
   // falls back to the early-access mailto.
-  appStoreUrl: '',
+  appStoreUrl: 'https://apps.shopify.com/optimalify-customer-account',
 } as const;
 
 export const installHref = SITE.appStoreUrl
