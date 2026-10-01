@@ -1,6 +1,7 @@
 import {defineConfig} from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import {visit} from 'unist-util-visit';
+import {listingUrl} from './src/config.ts';
 
 /**
  * The Help Center articles are the *same* Markdown files we serve raw at
@@ -15,6 +16,18 @@ function remarkRewriteHelpLinks() {
       if (!m) return;
       const [, slug, hash = ''] = m;
       node.url = slug === 'index' ? `/help/${hash}` : `/help/${slug}/${hash}`;
+    });
+  };
+}
+
+/**
+ * Blog posts link to the App Store with `[text](install:listing)`; this swaps in
+ * the UTM-tagged listing URL from src/config.ts so the URL is never typed twice.
+ */
+function remarkInstallLink() {
+  return (tree) => {
+    visit(tree, 'link', (node) => {
+      if (node.url === 'install:listing') node.url = listingUrl('blog');
     });
   };
 }
@@ -43,7 +56,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   markdown: {
-    remarkPlugins: [remarkRewriteHelpLinks],
+    remarkPlugins: [remarkRewriteHelpLinks, remarkInstallLink],
     rehypePlugins: [rehypeWrapTables],
     shikiConfig: {theme: 'github-light'},
   },

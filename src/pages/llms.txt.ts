@@ -1,6 +1,7 @@
 import type {APIRoute} from 'astro';
 import {getCollection} from 'astro:content';
 import {SITE} from '../config';
+import {getPosts} from '../utils/blog';
 
 /**
  * llms.txt — a machine-readable index of the Help Center, pointing at the raw
@@ -11,6 +12,10 @@ export const GET: APIRoute = async () => {
   const docs = articles
     .filter((a) => a.id !== 'index')
     .map((a) => `- [${a.data.title}](${SITE.url}/help/${a.id}.md): ${a.data.description}`)
+    .join('\n');
+
+  const posts = (await getPosts())
+    .map((p) => `- [${p.data.title}](${SITE.url}/blog/${p.id}): ${p.data.description}`)
     .join('\n');
 
   const body = `# ${SITE.name}
@@ -25,6 +30,10 @@ Markdown by appending \`.md\` to its URL.
 ## Help Center
 
 ${docs}
+
+## Blog
+
+${posts}
 
 ## Optional
 

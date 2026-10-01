@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {SITE} from '../../config';
+import {getPosts, readingMinutes} from '../../utils/blog';
+
+const posts = await getPosts();
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'});
+---
+
+<BaseLayout
+  title="Blog"
+  description={`Practical guides for Shopify merchants on customer accounts: what changed, what you can customize, and how to use the pages your customers already open. From ${SITE.name}.`}
+  surface="blog"
+>
+  <section class="blog wrap">
+    <header class="blog-head">
+      <span class="eyebrow">Blog</span>
+      <h1>Customer accounts, explained for merchants</h1>
+      <p class="lede">
+        Practical, source-checked guides on Shopify’s customer account pages.
+        <a href="/rss.xml">RSS feed</a>
+      </p>
+    </header>
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <a class="post-card" href={`/blog/${p.id}`}>
+            <p class="meta">
+              <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+              <span aria-hidden="true">·</span>
+              <span>{readingMinutes(p.body ?? '')} min read</span>
+            </p>
+            <h2>{p.data.title}</h2>
+            <p class="desc">{p.data.description}</p>
+            <span class="more">Read the guide →</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog { padding-top: 56px; padding-bottom: 80px; max-width: 860px; }
+  .blog-head h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); margin: 18px 0 14px; }
+  .blog-head { margin-bottom: 40px; }
+  .post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+  .post-card {
+    display: flex; flex-direction: column; gap: 8px; color: inherit;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 26px 22px; box-shadow: var(--shadow-sm);
+    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  }
+  .post-card:hover {
+    text-decoration: none; transform: translateY(-3px);
+    box-shadow: var(--shadow-md); border-color: var(--brand-500);
+  }
+  .post-card h2 { font-size: 1.35rem; }
+  .meta { color: var(--muted); font-size: 0.85rem; display: flex; gap: 8px; }
+  .desc { color: var(--muted); font-size: 0.97rem; }
+  .more { color: var(--brand-600); font-weight: 600; font-size: 0.9rem; margin-top: 4px; }
+</style>

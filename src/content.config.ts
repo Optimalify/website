@@ -12,4 +12,19 @@ const help = defineCollection({
   }),
 });
 
-export const collections = {help};
+// The blog. One Markdown file per post at src/content/blog/<slug>.md, rendered at
+// /blog/<slug>, listed at /blog and in /rss.xml. An `## FAQ` section whose
+// questions are `###` headings also becomes FAQPage JSON-LD (src/utils/blog.ts).
+const blog = defineCollection({
+  loader: glob({pattern: '*.md', base: './src/content/blog'}),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    tags: z.array(z.string()).min(1),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = {help, blog};

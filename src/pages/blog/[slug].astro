@@ -1,0 +1,97 @@
+---
+import type {GetStaticPaths} from 'astro';
+import {render} from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/prose.css';
+import {SITE} from '../../config';
+import {extractFaq, getPosts, readingMinutes} from '../../utils/blog';
+
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map((entry) => ({params: {slug: entry.id}, props: {entry}}));
+}) satisfies GetStaticPaths;
+
+const {entry} = Astro.props;
+const {Content} = await render(entry);
+const {title, description, date, updated, tags} = entry.data;
+const url = `${SITE.url}/blog/${entry.id}`;
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'});
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  keywords: tags.join(', '),
+  image: `${SITE.url}/img/og.png`,
+  mainEntityOfPage: {'@type': 'WebPage', '@id': url},
+  author: {'@type': 'Organization', name: SITE.name, url: SITE.url},
+  publisher: {'@type': 'Organization', name: SITE.name, url: SITE.url},
+};
+
+const faq = extractFaq(entry.body ?? '');
+const faqPage = faq.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {'@type': 'Answer', text: f.a},
+      })),
+    }
+  : null;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  surface="blog"
+  ogType="article"
+  publishedTime={date.toISOString()}
+  tags={tags}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(article)} />
+  {faqPage && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqPage)} />}
+
+  <article class="post wrap">
+    <header class="post-head">
+      <p class="crumb"><a href="/blog">← Blog</a></p>
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+      <p class="meta">
+        <time datetime={date.toISOString()}>{fmt(date)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingMinutes(entry.body ?? '')} min read</span>
+        {updated && (<><span aria-hidden="true">·</span><span>Updated <time datetime={updated.toISOString()}>{fmt(updated)}</time></span></>)}
+      </p>
+      <ul class="tags">{tags.map((t) => <li>{t}</li>)}</ul>
+    </header>
+    <div class="prose"><Content /></div>
+    <footer class="post-foot">
+      <a href="/blog">← All posts</a>
+      <a href="/help">Help Center</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { max-width: 780px; padding-top: 48px; padding-bottom: 72px; }
+  .crumb { font-size: 0.9rem; margin-bottom: 14px; }
+  .post-head { border-bottom: 1px solid var(--line); padding-bottom: 26px; margin-bottom: 32px; }
+  .post-head h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); }
+  .post-head .lede { margin-top: 12px; font-size: 1.05rem; }
+  .meta { margin-top: 16px; color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 6px 10px; }
+  .tags { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li {
+    font-size: 0.78rem; font-weight: 600; color: var(--accent-ink); background: var(--accent-soft);
+    padding: 4px 11px; border-radius: 999px;
+  }
+  .post-foot {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.93rem;
+  }
+</style>

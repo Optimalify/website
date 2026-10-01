@@ -53,6 +53,7 @@ const ogImage = new URL('/img/og.png', SITE.url).href;
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} blog`} href="/rss.xml" />
     <slot name="head" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -68,6 +69,7 @@ const ogImage = new URL('/img/og.png', SITE.url).href;
         <nav class="head-nav">
           <a href="/#features">Features</a>
           <a href="/#how">How it works</a>
+          <a href="/blog">Blog</a>
           <a href="/help">Help Center</a>
           <a href={installHref} class="btn btn-primary btn-sm">{installLabel}</a>
         </nav>
@@ -92,6 +94,7 @@ const ogImage = new URL('/img/og.png', SITE.url).href;
             <a href="/#how">How it works</a>
             <a href="/#pricing">Pricing</a>
             <a href="/#faq">FAQ</a>
+            <a href="/blog">Blog</a>
           </div>
           <div>
             <h4>Help Center</h4>
