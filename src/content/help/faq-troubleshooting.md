@@ -38,8 +38,8 @@ placement's **Entry handle** to the entry you want there. Blank = your default e
 | Profile capture | Profile, Orders, Order status |
 
 ## Are banner texts translated?
-Yes — the banner **heading, message, and button label** are auto-translated to your
-customers' languages. Review and adjust translations on the **Translations** page in Optimalify.
+Not yet. The banner shows the text you write, in the language you write it. Built-in wording
+(for example the Profile block's default heading) already appears in each customer's language.
 
 ## Where do badge logos come from?
 From your store's **Files** (Settings → Files). You pick an existing image; nothing is

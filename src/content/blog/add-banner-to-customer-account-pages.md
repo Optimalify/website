@@ -36,7 +36,7 @@ Shopify's own documentation lists announcement-style use cases such as time-sens
    - **Button (optional):** a label up to 40 characters and a link.
 4. Set **Status** to **Active** and save. A **Draft** banner stays hidden.
 
-A live preview on the right updates as you type, so you can adjust the wording before anything goes live. The heading, message and button label are translated automatically into your customers' languages, and you can review each string on the app's **Translations** page.
+A live preview on the right updates as you type, so you can adjust the wording before anything goes live.
 
 ## Step 2: Place the block in the editor
 
@@ -90,7 +90,7 @@ Shopify's announcement placements are dismissible strips by design. For Optimali
 
 ### Will the banner be translated?
 
-Optimalify translates the heading, message and button label automatically, and you can review and adjust the results. Every block in the app is translatable, so customers read it in their own language.
+Not yet. The banner shows the text you write, in the language you write it. If you sell in several languages, write the copy in the language most of your customers read.
 
 ### Can I put a banner on the sign-in page?
 

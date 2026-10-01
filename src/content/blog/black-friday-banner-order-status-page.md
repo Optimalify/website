@@ -84,7 +84,6 @@ Customer account pages show only to signed-in customers. Sign in to a customer a
 - [ ] Discount code created, active and tested
 - [ ] Banner written, set to **Active**, with a **Schedule**
 - [ ] Block placed and **saved** on Order status (and Orders if wanted)
-- [ ] Translations reviewed if you sell in several languages
 - [ ] Button link tested from a signed-in account
 - [ ] A reminder to **turn the banner off** or let the schedule end it, and to deactivate the code
 
@@ -96,7 +95,7 @@ Yes. Set **Until** in the Schedule condition and the banner stops showing after 
 
 ### Will customers in other languages see it?
 
-Optimalify translates the heading, message and button label automatically, and you can review and adjust the strings on the app's Translations page.
+Banner text appears exactly as you write it. If you sell in several languages, write the copy in the language most of your customers read.
 
 ### Can I run more than one banner?
 

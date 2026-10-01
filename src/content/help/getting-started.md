@@ -12,7 +12,7 @@ editor.
 ## What you can add
 
 - **Banner** — announcements (sales, shipping notices, policy updates) on the Orders and
-  Order status pages. Content is **auto-translated** to your customers' languages.
+  Order status pages.
 - **Support** — your contact channels (email, phone, WhatsApp, help center, "report a
   problem") in the footer of every account page.
 - **Trust badges** — secure-checkout, money-back, fast-shipping and custom badges on the
@@ -40,7 +40,6 @@ Open **Apps → Optimalify**:
 - **Home** shows a quick check of which blocks are live on your pages.
 - **Blocks** is the catalogue — Banner, Support, Badges (trust), Payments, and Profile. Open
   any one to configure it.
-- **Translations** lets you review and adjust auto-translated banner copy.
 
 ## Before your customers can see anything
 
