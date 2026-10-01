@@ -23,7 +23,9 @@ npm run preview   # serve dist/
 | `src/pages/help/[slug].md.ts` | Serves the *same file* verbatim at `/help/<slug>.md` |
 | `src/pages/llms.txt.ts` | `/llms.txt` — machine-readable index of the KB |
 | `src/components/AccountMock.astro` | The customer-account mockups, rebuilt in HTML |
-| `src/config.ts` | Domain, support email, App Store URL |
+| `src/config.ts` | Domain, support email, App Store URL + UTM helper, pricing facts |
+| `src/pages/founding.astro` | The Founding merchants offer page |
+| `src/content/blog/*.md` | Blog posts |
 
 ### The Help Center is Markdown, twice
 
@@ -41,10 +43,25 @@ Adding an article: drop a `.md` file in `src/content/help/` with `title`, `descr
 `order` frontmatter. It appears in the sidebar, the `.md` route, `llms.txt` and the sitemap
 automatically.
 
-## When the App Store listing goes live
+## The blog
 
-Set `appStoreUrl` in `src/config.ts`. Every "Get early access" CTA becomes "Add to Shopify"
-and points at the listing.
+Posts are Markdown files in `src/content/blog/` with `title`, `description`, `date` and `tags`
+frontmatter (`updated` and `draft` are optional). They render at `/blog/<slug>`, are listed at
+`/blog` and in `/rss.xml`, and are in the sitemap and `llms.txt`.
+
+- **FAQ:** a `## FAQ` section whose questions are `###` headings also emits `FAQPage` JSON-LD.
+- **Install CTA:** link to the App Store with `[text](install:listing)`. The URL (and its UTM
+  parameters) comes from `src/config.ts`; never paste the listing URL into a post.
+- **Help Center links:** absolute, e.g. `[Banner](/help/banner)`; other posts as `/blog/<slug>`.
+- **Platform facts:** cite the Shopify page you checked in a `## Sources` section, and leave out
+  anything you cannot verify.
+
+## The App Store listing
+
+`SITE.appStoreUrl` in `src/config.ts` is the one place the listing URL lives. Build install links
+with `listingUrl('blog' | 'landing' | 'founding')`, which adds
+`utm_source=optimalify.org&utm_medium=<surface>&utm_campaign=organic`. Pricing facts shown on the
+site come from `PLANS` in the same file; keep them in step with the listing.
 
 ## Deploying
 
