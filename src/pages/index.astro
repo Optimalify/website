@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AccountMock from '../components/AccountMock.astro';
-import {SITE, installHref, installLabel} from '../config';
+import {SITE, installLabel, listingUrl} from '../config';
+
+const installHref = listingUrl('landing');
 
 const blocks = [
   {
