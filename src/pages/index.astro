@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AccountMock from '../components/AccountMock.astro';
-import {SITE, installLabel, listingUrl} from '../config';
+import {PLANS, SITE, installLabel, listingUrl} from '../config';
 
 const installHref = listingUrl('landing');
 
@@ -9,38 +9,32 @@ const blocks = [
   {
     icon: '📣',
     name: 'Banner',
-    text: 'Announcements on the Orders and Order status pages — sales, shipping notices, policy updates. Auto-translated into your customers’ languages.',
+    text: 'Announcements on the Orders and Order status pages — sales, shipping notices, policy updates. Show them to everyone or only to the right customers, and every one is translatable.',
     href: '/help/banner',
   },
   {
-    icon: '🎯',
-    name: 'Targeting',
-    text: 'Show a banner only to the customers who should see it — by customer tag, birthday month, order status, or a schedule.',
-    href: '/help/banner-targeting',
-  },
-  {
-    icon: '🧾',
-    name: 'Invoice download',
-    text: 'A Download-invoice PDF action right in the order menu, so customers stop emailing you for one.',
-    href: '/help/invoice',
-  },
-  {
-    icon: '💬',
-    name: 'Support',
-    text: 'Email, phone, WhatsApp, help centre and “report a problem” links in the footer of every account page.',
-    href: '/help/support',
+    icon: '🎂',
+    name: 'Profile',
+    text: 'Let signed-in customers save their birthday and contact preferences on the Profile page. It’s stored on the customer, ready for your offers and segments.',
+    href: '/help/profile',
   },
   {
     icon: '🛡️',
     name: 'Trust badges',
-    text: 'Secure-checkout, money-back, fast-shipping and custom badges on the Order status page, where shoppers track delivery.',
+    text: 'Secure-checkout, money-back and shipping badges on the Order status page, where shoppers track delivery.',
     href: '/help/trust-badges',
   },
   {
     icon: '💳',
     name: 'Payment icons',
-    text: 'The payment methods you accept, shown as a tidy row of brand icons across the account pages.',
+    text: 'The payment methods you accept, shown as a tidy row of brand icons on the account pages.',
     href: '/help/payment-icons',
+  },
+  {
+    icon: '💬',
+    name: 'Support links',
+    text: 'Email, phone, WhatsApp, help centre and “report a problem” links in the footer of the account pages.',
+    href: '/help/support',
   },
 ];
 
@@ -51,15 +45,19 @@ const faqs = [
   },
   {
     q: 'Does this work with the new customer accounts?',
-    a: 'That’s the only thing it works with. Optimalify is built on Shopify’s Customer Account UI Extensions — the surface that replaced legacy accounts.',
+    a: 'That’s the only thing it works with. Optimalify is built on Shopify’s customer account UI extensions, which run on the new customer accounts — not on legacy customer accounts, which Shopify has deprecated.',
   },
   {
     q: 'Will my banners be translated?',
-    a: 'Yes. A banner’s heading, message and button label are auto-translated into your customers’ languages, and you can review or adjust every string on the Translations page.',
+    a: 'Yes. Blocks are translatable, so each customer reads them in their own language. A banner’s heading, message and button label are translated automatically, and you can review or adjust every string on the Translations page.',
   },
   {
     q: 'Does Optimalify collect customer data?',
-    a: 'Banner, Support, Trust badges and Payment icons collect nothing — they only display what you configure. Profile capture stores what customers voluntarily enter (birthday, size, preferences) as metafields on their own customer record.',
+    a: 'Banner, Support, Trust badges and Payment icons collect nothing — they only display what you configure. Profile stores what customers voluntarily enter (birthday and contact preferences) as metafields on their own customer record.',
+  },
+  {
+    q: 'How much does it cost?',
+    a: `Free covers ${PLANS.free.blocks} block. Pro covers all five blocks for $${PLANS.pro.monthly}/month, or $${PLANS.pro.yearly}/year (save ${PLANS.pro.yearlySaving}), with a ${PLANS.pro.trialDays}-day free trial. All charges are billed in USD.`,
   },
   {
     q: 'Why isn’t my block showing?',
@@ -76,16 +74,16 @@ const faqs = [
         <span class="eyebrow on-brand">For Shopify customer accounts</span>
         <h1>Meet customers<br />where they sign in</h1>
         <p class="hero-lede">
-          Banners, profile capture, trust badges, payment icons and support — right on the
-          account pages your shoppers already visit. No theme code.
+          Banners, profile capture, trust badges, payment icons and support links — right on
+          the account pages your shoppers already visit. No theme code.
         </p>
         <div class="hero-cta">
           <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
           <a href="/help/getting-started" class="btn btn-on-brand-ghost">See how it works</a>
         </div>
         <ul class="hero-ticks">
-          <li>Six blocks, one app</li>
-          <li>Auto-translated copy</li>
+          <li>Five blocks, one app</li>
+          <li>Translatable copy</li>
           <li>Set up in minutes</li>
         </ul>
       </div>
@@ -100,10 +98,11 @@ const faqs = [
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Why now</span>
-        <h2>Legacy customer accounts are gone.<br />These are the pages that replaced them.</h2>
+        <h2>Legacy customer accounts are deprecated.<br />The new pages are where customers land.</h2>
         <p class="lede">
-          Shopify retired legacy accounts and moved every store onto the new customer
-          account pages. They’re clean, fast — and, out of the box, almost empty.
+          Shopify has <a href="https://shopify.dev/changelog/posts/legacy-customer-accounts-are-deprecated" rel="noopener">deprecated legacy customer accounts</a>
+          in favour of the new customer account pages. They’re clean, fast — and, out of the
+          box, fairly bare.
         </p>
       </div>
       <div class="why-grid">
@@ -128,7 +127,7 @@ const faqs = [
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">The blocks</span>
-        <h2>Six things to add, all in one app</h2>
+        <h2>Five blocks, all in one app</h2>
         <p class="lede">Turn on what you need. Each block is configured in the app and placed wherever you want it in Shopify’s editor.</p>
       </div>
       <div class="block-grid">
@@ -151,14 +150,14 @@ const faqs = [
         <span class="eyebrow">Trust badges</span>
         <h2>Build confidence at a glance</h2>
         <p class="lede">
-          Reassure shoppers with secure-checkout, money-back, shipping and authenticity
-          badges — right on the order status page, while they’re tracking delivery and
-          wondering whether the parcel is really coming.
+          Reassure shoppers with secure-checkout, money-back and shipping badges — right on
+          the order status page, while they’re tracking delivery and wondering whether the
+          parcel is really coming.
         </p>
         <ul class="ticks">
-          <li>Four ready-made badges, or write your own</li>
+          <li>Ready-made badges, or write your own</li>
           <li>Swap any icon for a logo from your store’s Files</li>
-          <li>Support links in the footer of every account page</li>
+          <li>Pair them with support links in the account footer</li>
         </ul>
         <a href="/help/trust-badges" class="text-link">Read the trust badges guide →</a>
       </div>
@@ -172,12 +171,12 @@ const faqs = [
         <span class="eyebrow">Profile capture</span>
         <h2>Learn what your customers want</h2>
         <p class="lede">
-          Collect birthday and contact preferences right on the account page. Answers save
+          Collect birthday and contact preferences right on the Profile page. Answers save
           to each customer as metafields, so your segments and flows get personal — zero-party
           data, given willingly.
         </p>
         <ul class="ticks">
-          <li>Birthday, preferred size, communication preferences</li>
+          <li>Birthday and contact preferences</li>
           <li>Saved on the customer record, visible in admin</li>
           <li>Nothing collected that the customer didn’t type</li>
         </ul>
@@ -213,6 +212,37 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ── Pricing ──────────────────────────────────────────────────────── -->
+  <section class="section pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Start free. Upgrade when you want every block.</h2>
+        <p class="lede">All charges are billed in USD.</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul class="ticks">
+            <li>{PLANS.free.blocks} block</li>
+          </ul>
+          <a href={installHref} class="btn btn-ghost">{installLabel}</a>
+        </article>
+        <article class="plan plan-pro">
+          <h3>Pro</h3>
+          <p class="price">${PLANS.pro.monthly}<span> / month</span></p>
+          <p class="price-alt">or ${PLANS.pro.yearly}/year — save {PLANS.pro.yearlySaving}</p>
+          <ul class="ticks">
+            <li>All blocks</li>
+            <li>{PLANS.pro.trialDays}-day free trial</li>
+          </ul>
+          <a href={installHref} class="btn btn-primary">{installLabel}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
   <section class="section faq" id="faq">
     <div class="wrap faq-wrap">
@@ -239,7 +269,7 @@ const faqs = [
   <section class="cta">
     <div class="wrap cta-inner">
       <h2>Put something on the page your customers already open</h2>
-      <p>Six blocks, no theme code, live in an afternoon.</p>
+      <p>Five blocks, no theme code. Start on Free, or try Pro free for {PLANS.pro.trialDays} days.</p>
       <div class="hero-cta">
         <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
         <a href="/help" class="btn btn-on-brand-ghost">Browse the Help Center</a>
@@ -333,6 +363,18 @@ const faqs = [
   .steps p { color: var(--muted); font-size: 0.97rem; }
   .how-foot { text-align: center; margin-top: 28px; color: var(--muted); font-size: 0.95rem; }
 
+  /* ── Pricing ── */
+  .plan-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
+  .plan {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px 28px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-sm);
+  }
+  .plan-pro { border-color: var(--brand-500); box-shadow: var(--shadow-md); }
+  .plan .price { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+  .plan .price span { font-size: 1rem; font-weight: 550; color: var(--muted); }
+  .plan .price-alt { color: var(--muted); font-size: 0.93rem; }
+  .plan .ticks { flex: 1; }
+
   /* ── FAQ ── */
   .faq-wrap { max-width: 760px; }
   .faq-list { display: grid; gap: 10px; }
@@ -363,6 +405,7 @@ const faqs = [
     .hero-mock, .feature-mock { justify-self: start; max-width: 560px; }
     .why-grid, .block-grid { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr; }
+    .plan-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .hero { padding: 56px 0 68px; }
