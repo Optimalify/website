@@ -35,3 +35,11 @@ export function listingUrl(medium: Surface): string {
 }
 
 export const installLabel = 'Add to Shopify';
+
+/** mailto: link for the Founding merchants offer — subject and body template pre-filled. */
+export const foundingMailto =
+  `mailto:${SITE.supportEmail}` +
+  `?subject=${encodeURIComponent('Founding merchant')}` +
+  `&body=${encodeURIComponent(
+    ['Store URL: ', 'What I would use first (Banner, Profile, Trust badges, Payment icons, Support links): ', ''].join('\n'),
+  )}`;

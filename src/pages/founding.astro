@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {PLANS, SITE, foundingMailto, listingUrl} from '../config';
+
+const installHref = listingUrl('founding');
+
+const gets = [
+  {
+    title: `Pro free for 6 months`,
+    text: 'All five blocks (Banner, Profile, Trust badges, Payment icons and Support links) with no charge for six months. Pro is normally $' +
+      `${PLANS.pro.monthly}/month or $${PLANS.pro.yearly}/year.`,
+  },
+  {
+    title: 'A direct line to the builders',
+    text: 'You email a real inbox, and what you tell us on the call goes straight to the people building Optimalify.',
+  },
+  {
+    title: 'A say in what we build next',
+    text: 'We will ask what is missing and what is confusing, and use the answers to decide what to build next.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Email us',
+    text: 'Use the button below. It opens an email with a short template: your store URL and the block you would use first.',
+  },
+  {
+    title: 'Install from the App Store',
+    text: `Add Optimalify from the Shopify App Store. The Free plan covers ${PLANS.free.blocks} block, so you can start straight away.`,
+  },
+  {
+    title: 'Book a 15-minute call',
+    text: 'We reply to confirm your place and arrange a short call about how you use the app and what you would change.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What do I have to do in return?',
+    a: 'One 15-minute feedback call about how you use Optimalify: what works, what is confusing and what is missing.',
+  },
+  {
+    q: 'Who can join?',
+    a: 'Any Shopify store using the new customer accounts. The offer is for the first 20 stores that get in touch. We will take this page down or change it when those places are taken.',
+  },
+  {
+    q: 'What happens after six months?',
+    a: 'You choose. Stay on Pro at the regular price shown on the App Store listing, or move to the Free plan.',
+  },
+];
+---
+
+<BaseLayout
+  title="Founding merchants"
+  description="The first 20 stores get Optimalify Pro free for 6 months in exchange for a 15-minute feedback call."
+  surface="founding"
+>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Founding merchants</span>
+      <h1>Be one of the first 20 stores on Optimalify Pro</h1>
+      <p class="lede">
+        The first 20 stores get <strong>Pro free for 6 months</strong> in exchange for a
+        <strong>15-minute feedback call</strong>. Tell us how you would use customer account blocks
+        on your store and we will help you get them live.
+      </p>
+      <div class="cta-row">
+        <a href={foundingMailto} class="btn btn-primary">Email us to join</a>
+        <a href={installHref} class="btn btn-ghost">Install free</a>
+      </div>
+      <p class="fine">
+        The email goes to <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. You can
+        also install on the Free plan first and look around.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What you get</h2>
+      </div>
+      <div class="card-grid">
+        {gets.map((g) => (
+          <article class="card">
+            <h3>{g.title}</h3>
+            <p>{g.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+      </div>
+      <ol class="steps">
+        {steps.map((s, i) => (
+          <li>
+            <span class="num">{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap faq-wrap">
+      <div class="section-head">
+        <h2>Questions</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <div class="cta-row end">
+        <a href={foundingMailto} class="btn btn-primary">Email us to join</a>
+        <a href={installHref} class="btn btn-ghost">Install free</a>
+      </div>
+    </div>
+  </section>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {'@type': 'Answer', text: f.a},
+      })),
+    })}
+  />
+</BaseLayout>
+
+<style>
+  .hero { padding: 72px 0 56px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .hero-inner { max-width: 760px; }
+  .hero h1 { margin: 18px 0 16px; }
+  .hero .lede { color: var(--ink-2); max-width: 60ch; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .cta-row.end { justify-content: center; margin-top: 36px; }
+  .fine { margin-top: 16px; color: var(--muted); font-size: 0.9rem; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px; box-shadow: var(--shadow-sm);
+  }
+  .card h3 { margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 0.97rem; }
+
+  .alt { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .steps li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; }
+  .num {
+    display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
+    background: var(--brand-gradient); color: #fff; font-weight: 750; margin-bottom: 16px;
+  }
+  .steps h3 { margin-bottom: 8px; }
+  .steps p { color: var(--muted); font-size: 0.97rem; }
+
+  .faq-wrap { max-width: 760px; }
+  .faq-list { display: grid; gap: 10px; }
+  .faq-list details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 22px; }
+  .faq-list summary {
+    cursor: pointer; list-style: none; padding: 16px 0; font-weight: 650;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: '+'; color: var(--brand-600); font-size: 1.3rem; font-weight: 500; }
+  .faq-list details[open] summary::after { content: '–'; }
+  .faq-list details p { color: var(--muted); font-size: 0.97rem; padding: 0 0 18px; margin-top: -2px; }
+
+  @media (max-width: 860px) {
+    .card-grid, .steps { grid-template-columns: 1fr; }
+  }
+</style>

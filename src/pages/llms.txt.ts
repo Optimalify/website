@@ -39,6 +39,7 @@ ${posts}
 
 - [Help Center index](${SITE.url}/help/index.md): all guides, and where each block appears
 - [Home](${SITE.url}/): product overview and FAQ
+- [Founding merchants](${SITE.url}/founding): the first 20 stores get Pro free for 6 months in exchange for a 15-minute feedback call
 - Support: ${SITE.supportEmail}
 `;
 
