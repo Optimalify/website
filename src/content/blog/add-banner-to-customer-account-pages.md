@@ -5,7 +5,7 @@ date: 2026-10-01
 tags: [banner, how-to, customer accounts]
 ---
 
-Your customers open their account pages to check an order, track a parcel or start a return. That makes the **Orders** and **Order status** pages some of the most-visited post-purchase screens you have, and by default there is nothing on them that is yours. A banner fixes that: a shipping delay notice, a sale, a policy change, a welcome message.
+Your customers open their account pages to check an order, track a parcel or start a return. That makes the **Orders** and **Order status** pages the screens your customers use after they buy, and by default there is nothing on them that is yours. A banner fixes that: a shipping delay notice, a sale, a policy change, a welcome message.
 
 This guide shows how to add one to Shopify's new customer accounts without touching your theme.
 
