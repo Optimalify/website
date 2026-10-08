@@ -1,7 +1,7 @@
 ---
 title: "FAQ & troubleshooting"
 description: "Common questions and fixes, e.g. “my block doesn’t show”."
-order: 10
+order: 15
 ---
 
 ## My block doesn't show on the page
@@ -36,6 +36,10 @@ placement's **Entry handle** to the entry you want there. Blank = your default e
 | Trust badges | Order status (after fulfillment details) |
 | Payment icons | Order status, Orders, Profile, footer |
 | Profile capture | Profile, Orders, Order status |
+| Social links | Order status, Orders, Profile, footer |
+| FAQ | Order status, Orders, Profile |
+| Store policies | Order status, Orders, Profile |
+| Rich content | Order status, Orders, Profile, footer |
 
 ## Are banner texts translated?
 Yes — the banner **heading, message, and button label** are auto-translated to your

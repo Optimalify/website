@@ -29,6 +29,10 @@ Two ways:
    - **Optimalify Badges** (trust badges)
    - **Optimalify Payment Icons**
    - **Optimalify Profile**
+   - **Optimalify Social Links**
+   - **Optimalify FAQ**
+   - **Optimalify Store policies**
+   - **Optimalify Rich Content**
 4. Drag it to the position you want.
 5. Click **Save** in the editor.
 
@@ -41,6 +45,10 @@ Where each block can go:
 | Trust badges | Order status (after fulfillment details) |
 | Payment icons | Order status, Orders, Profile, footer |
 | Profile capture | Profile, Orders, Order status |
+| Social links | Order status, Orders, Profile, footer |
+| FAQ | Order status, Orders, Profile |
+| Store policies | Order status, Orders, Profile |
+| Rich content | Order status, Orders, Profile, footer |
 
 ## Choose which entry a block shows — the "Entry handle"
 

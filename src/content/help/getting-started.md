@@ -20,6 +20,11 @@ editor.
 - **Payment icons** — the payment methods you accept, shown as a tidy row of icons.
 - **Profile capture** — let logged-in customers save their birthday, preferred size, and
   communication preferences (zero-party data you can use for marketing).
+- **Social links**, **FAQ**, **Store policies** and **Rich content** — links to your profiles,
+  expandable Q&A and policy lists, and an image-and-text promo card.
+
+Short on time? **[Starter packs](starter-packs.md)** on the Dashboard add a goal's worth of
+blocks in one click.
 
 ## How it works (2 steps)
 

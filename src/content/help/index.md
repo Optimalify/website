@@ -24,6 +24,11 @@ customer account pages](add-blocks-in-editor.md)**.
 | [Trust badges](trust-badges.md) | Secure-checkout, money-back, and shipping badges on Order status |
 | [Payment icons](payment-icons.md) | The payment methods you accept, as a row of icons |
 | [Profile capture](profile.md) | Let customers save birthday, size, and preferences |
+| [Social links](social-links.md) | Links to your social profiles and other sites |
+| [FAQ block](faq.md) | Common questions in an expandable list |
+| [Store policies](store-policies.md) | Returns, shipping and other policies as an expandable list |
+| [Rich content](rich-content.md) | An image, heading, text and button to promote or inform |
+| [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
 | [FAQ & troubleshooting](faq-troubleshooting.md) | Common questions and fixes (e.g. "my block doesn't show") |
 
 ## The blocks at a glance
@@ -36,5 +41,9 @@ customer account pages](add-blocks-in-editor.md)**.
 | **Trust badges** | Order status, after fulfillment details | Blocks → Badges |
 | **Payment icons** | Order status, Orders, Profile, footer | Blocks → Payments |
 | **Profile capture** | Profile page (+ Orders / Order status) | Blocks → Profile |
+| **Social links** | Order status, Orders, Profile, footer | Blocks → Social links |
+| **FAQ** | Order status, Orders, Profile | Blocks → FAQ |
+| **Store policies** | Order status, Orders, Profile | Blocks → Store policies |
+| **Rich content** | Order status, Orders, Profile, footer | Blocks → Rich content |
 
 Need a hand? Email **mia@optimalify.org**.
