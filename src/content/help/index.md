@@ -29,6 +29,7 @@ customer account pages](add-blocks-in-editor.md)**.
 | [Store policies](store-policies.md) | Returns, shipping and other policies as an expandable list |
 | [Rich content](rich-content.md) | An image, heading, text and button to promote or inform |
 | [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
+| [Translate your blocks](translations.md) | Show block text in each customer's language |
 | [FAQ & troubleshooting](faq-troubleshooting.md) | Common questions and fixes (e.g. "my block doesn't show") |
 
 ## The blocks at a glance

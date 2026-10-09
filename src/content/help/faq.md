@@ -30,7 +30,7 @@ Both halves are required for every row.
 ## Tips
 - Lead with the questions you get most.
 - Keep answers short and link out for the details.
-- The FAQ text isn't translated per language yet — you write **one text per store**.
+- Translate each question and answer under **Translations** — see [Translate your blocks](translations.md).
 - Want a full FAQ **page** in the account menu? Use **Custom pages** instead.
 
 ## Who sees it, and plans
