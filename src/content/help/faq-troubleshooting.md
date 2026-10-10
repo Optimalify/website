@@ -1,7 +1,7 @@
 ---
 title: "FAQ & troubleshooting"
 description: "Common questions and fixes, e.g. “my block doesn’t show”."
-order: 15
+order: 16
 ---
 
 ## My block doesn't show on the page
@@ -41,13 +41,14 @@ placement's **Entry handle** to the entry you want there. Blank = your default e
 | Store policies | Order status, Orders, Profile |
 | Rich content | Order status, Orders, Profile, footer |
 
-## Are banner texts translated?
-Not yet. The banner shows the text you write, in the language you write it. Built-in wording
-(for example the Profile block's default heading) already appears in each customer's language.
+## Can I translate the text of my blocks?
+Yes. Translate it under **Translations** in Optimalify or in Translate & Adapt; customers see
+their language, and your original text when a translation is missing. See
+[Translate your blocks](translations.md).
 
 ## Where do badge logos come from?
-From your store's **Files** (Settings → Files). You pick an existing image; nothing is
-uploaded from your computer in the badge editor. A logo replaces the badge's icon.
+Upload one from your computer or pick an image already in your store's **Files**
+(Settings → Files) — uploads are stored in Files too. A logo replaces the badge's icon.
 
 ## Does Optimalify collect customer data?
 - **Banner, Support, Trust badges, Payment icons:** no customer data — they only show the

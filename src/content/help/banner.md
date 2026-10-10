@@ -36,7 +36,8 @@ editor — see [Add blocks to your pages](add-blocks-in-editor.md).
   notices, `success` for good news, `info` (or `auto`) for everyday messages.
 - Keep the heading short; the message can carry the detail.
 - The **live preview** on the right updates as you type.
-- Banner text is not translated yet: customers see it in the language you write it in.
+- Translate the banner text under **Translations** in the app or in Translate & Adapt — see
+  [Translate your blocks](translations.md).
 
 ## Show different banners on different pages
 Create multiple banners, then place the block on each page and set the **Entry handle** to the

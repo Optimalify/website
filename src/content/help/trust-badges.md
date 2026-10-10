@@ -33,14 +33,13 @@ editor row, so presets are fully editable too.
 | **Description** | A short line under the title, shown in the Cards style (max 80). |
 | **Icon** | Pick from the curated set (Lock, Check circle, Check, Credit card, Money back, Discount, Shipping, Returns, Star, Gift card, Worldwide, Store, Fast) — or **None**. |
 | **Tone** | Icon colour: `auto`, `neutral`, `info`, `success`, `warning`, `critical`. |
-| **Logo** | Optional. Pick an image from your store's **Files** (Settings → Files). A logo **replaces** the icon. |
+| **Logo** | Optional. Upload an image (JPG, PNG, WebP, GIF or SVG, up to 5 MB) or pick one from your store's **Files** (Settings → Files). A logo **replaces** the icon. |
 
 Use **Move up / Move down** to reorder, the toggle to **show/hide** a badge, and **Remove**
 to delete one.
 
-> **Logos come from your store's Files only** — you choose from images already uploaded to
-> Settings → Files. Nothing is uploaded from your computer here, so customers only ever see
-> images hosted in your store.
+> **Logos always live in your store's Files** — an image you upload here is stored in
+> Settings → Files, so customers only ever see images hosted by Shopify.
 
 ## Display
 
