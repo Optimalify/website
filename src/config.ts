@@ -20,7 +20,7 @@ export const PLANS = {
 } as const;
 
 /** Where a visitor clicked install from. Becomes `utm_medium`. */
-export type Surface = 'blog' | 'landing' | 'founding';
+export type Surface = 'blog' | 'landing' | 'founding' | 'demo';
 
 /**
  * The App Store listing URL tagged for a surface of this site, e.g.
