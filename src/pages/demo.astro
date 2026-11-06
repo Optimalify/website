@@ -64,7 +64,11 @@ const pages = [
       These are the real blocks on our demo store. The text is sample content, and you write your
       own in the app.
     </p>
-    <a href={installHref} class="btn btn-primary">{installLabel}</a>
+    <div class="demo-actions">
+      <a href={installHref} class="btn btn-primary">{installLabel}</a>
+      <a href="https://optimalify-customer-account.myshopify.com/pages/use-cases" class="btn btn-ghost">See 14 use cases</a>
+    </div>
+    <p class="demo-note">The demo store shows its password on the first page.</p>
   </section>
 
   <section class="wrap demo-list">
@@ -88,6 +92,8 @@ const pages = [
 <style>
   .demo-head { padding-top: 56px; padding-bottom: 32px; }
   .demo-head p { max-width: 640px; margin: 12px 0 22px; font-size: 1.1rem; }
+  .demo-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .demo-head .demo-note { margin: 12px 0 0; font-size: 0.95rem; }
   .demo-list article { margin: 0 0 56px; }
   .demo-list h2 { margin: 0 0 4px; }
   .demo-list p { margin: 0 0 8px; }
