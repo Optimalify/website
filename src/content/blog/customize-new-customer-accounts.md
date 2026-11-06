@@ -106,4 +106,4 @@ Checked against Shopify's documentation on October 1, 2026:
 
 ## Fill in the empty parts of the page
 
-Out of the box, the new account pages are clean and a little bare. Optimalify gives you five no-code blocks for them (Banner, Profile, Trust badges, Payment icons and Support links), configured in the app and placed in the editor you just read about. The Free plan covers one block. [Add Optimalify from the Shopify App Store](install:listing) and try the one that fits your store first.
+Out of the box, the new account pages are clean and a little bare. Optimalify gives you 11 no-code blocks for them, such as Banner, FAQ, Invoice download and Trust badges, configured in the app and placed in the editor you just read about. The Free plan covers one block. [Add Optimalify from the Shopify App Store](install:listing) and try the one that fits your store first.
