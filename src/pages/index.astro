@@ -36,6 +36,48 @@ const blocks = [
     text: 'Email, phone, WhatsApp, help centre and “report a problem” links in the footer of the account pages.',
     href: '/help/support',
   },
+  {
+    icon: '🧾',
+    name: 'Invoice download',
+    text: 'A Download invoice action on the order, so signed-in customers get their own PDF without emailing you.',
+    href: '/help/invoice',
+  },
+  {
+    icon: '❓',
+    name: 'FAQ',
+    text: 'An expandable list of answers on the Order status, Orders and Profile pages, where the questions come up.',
+    href: '/help/faq',
+  },
+  {
+    icon: '📦',
+    name: 'Store policies',
+    text: 'Short return and shipping answers in an expandable list, right next to the order.',
+    href: '/help/store-policies',
+  },
+  {
+    icon: '✨',
+    name: 'Rich content',
+    text: 'A heading, text and a button on the account pages. Good for a new collection or a seasonal message.',
+    href: '/help/rich-content',
+  },
+  {
+    icon: '🔗',
+    name: 'Social links',
+    text: 'Your Facebook, Instagram, X, TikTok, YouTube, Pinterest and LinkedIn profiles, or your own link.',
+    href: '/help/social-links',
+  },
+  {
+    icon: '📄',
+    name: 'Pages',
+    text: 'Your own pages inside the account, with a menu item. Use them for a size guide or a care guide.',
+    href: '/demo',
+  },
+  {
+    icon: '👀',
+    name: 'See them live',
+    text: 'Tour every block on real account pages, with 14 use cases and what to enter for each.',
+    href: '/demo',
+  },
 ];
 
 const faqs = [
@@ -48,16 +90,16 @@ const faqs = [
     a: 'That’s the only thing it works with. Optimalify is built on Shopify’s customer account UI extensions, which run on the new customer accounts — not on legacy customer accounts, which Shopify has deprecated.',
   },
   {
-    q: 'Will my banners be translated?',
-    a: 'Not yet. A banner shows the text you write, in the language you write it. Built-in wording, such as the Profile block’s default heading, already appears in each customer’s language.',
+    q: 'Can I translate my blocks?',
+    a: 'Yes. Translate your text inside Optimalify or in Shopify’s Translate & Adapt app, and customers see it in the language they shop in. Built-in wording comes translated in English, Vietnamese, German, French, Spanish, Dutch and Italian.',
   },
   {
     q: 'Does Optimalify collect customer data?',
-    a: 'Banner, Support, Trust badges and Payment icons collect nothing — they only display what you configure. Profile stores what customers voluntarily enter (birthday and contact preferences) as metafields on their own customer record.',
+    a: 'Profile stores what customers voluntarily enter (such as a birthday and contact preferences) as metafields on their own customer record. Invoice download reads the customer’s own order to build the PDF. The other blocks only display what you configure.',
   },
   {
     q: 'How much does it cost?',
-    a: `Free covers ${PLANS.free.blocks} block. Pro covers all five blocks for $${PLANS.pro.monthly}/month, or $${PLANS.pro.yearly}/year (save ${PLANS.pro.yearlySaving}), with a ${PLANS.pro.trialDays}-day free trial. All charges are billed in USD.`,
+    a: `Free covers ${PLANS.free.blocks} block. Pro covers all 11 blocks for $${PLANS.pro.monthly}/month, or $${PLANS.pro.yearly}/year (save ${PLANS.pro.yearlySaving}), with a ${PLANS.pro.trialDays}-day free trial. All charges are billed in USD.`,
   },
   {
     q: 'Why isn’t my block showing?',
@@ -82,7 +124,7 @@ const faqs = [
           <a href="/demo" class="btn btn-on-brand-ghost">See the demo</a>
         </div>
         <ul class="hero-ticks">
-          <li>Five blocks, one app</li>
+          <li>11 blocks, one app</li>
           <li>Set up in minutes</li>
         </ul>
       </div>
@@ -126,7 +168,7 @@ const faqs = [
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">The blocks</span>
-        <h2>Five blocks, all in one app</h2>
+        <h2>11 blocks, all in one app</h2>
         <p class="lede">Turn on what you need. Each block is configured in the app and placed wherever you want it in Shopify’s editor.</p>
       </div>
       <div class="block-grid">
@@ -268,7 +310,7 @@ const faqs = [
   <section class="cta">
     <div class="wrap cta-inner">
       <h2>Put something on the page your customers already open</h2>
-      <p>Five blocks, no theme code. Start on Free, or try Pro free for {PLANS.pro.trialDays} days.</p>
+      <p>11 blocks, no theme code. Start on Free, or try Pro free for {PLANS.pro.trialDays} days.</p>
       <div class="hero-cta">
         <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
         <a href="/help" class="btn btn-on-brand-ghost">Browse the Help Center</a>
