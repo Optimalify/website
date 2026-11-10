@@ -13,7 +13,7 @@ export interface Ui {
   foot: {
     product: string; features: string; how: string; demo: string; pricing: string; faq: string;
     founding: string; blog: string; helpCenter: string; gettingStarted: string; addBlocks: string;
-    allGuides: string; contact: string; notAffiliated: string;
+    allGuides: string; contact: string; notAffiliated: string; legal: string;
   };
   help: {
     title: string; navLabel: string; back: string; viewMarkdown: string; needHand: string;
@@ -45,7 +45,7 @@ export const ui: Record<Locale, Ui> = {
       product: 'プロダクト', features: '機能', how: '使い方', demo: 'デモ', pricing: '料金', faq: 'よくある質問',
       founding: 'ファウンディングマーチャント', blog: 'ブログ', helpCenter: 'ヘルプセンター',
       gettingStarted: 'はじめに', addBlocks: 'ブロックの追加', allGuides: 'すべてのガイド',
-      contact: 'お問い合わせ', notAffiliated: 'Shopify Inc. とは提携していません',
+      contact: 'お問い合わせ', notAffiliated: 'Shopify Inc. とは提携していません', legal: '運営者情報',
     },
     help: {
       title: 'ヘルプセンター',
@@ -95,7 +95,7 @@ export const ui: Record<Locale, Ui> = {
       product: 'Product', features: 'Features', how: 'How it works', demo: 'Demo', pricing: 'Pricing', faq: 'FAQ',
       founding: 'Founding merchants', blog: 'Blog', helpCenter: 'Help Center',
       gettingStarted: 'Getting started', addBlocks: 'Add blocks', allGuides: 'All guides',
-      contact: 'Contact', notAffiliated: 'Not affiliated with Shopify Inc.',
+      contact: 'Contact', notAffiliated: 'Not affiliated with Shopify Inc.', legal: 'Legal notice',
     },
     help: {
       title: 'Help Center',

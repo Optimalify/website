@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {SITE} from '../config';
+import {type Locale} from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+const {locale} = Astro.props;
+const mail = SITE.supportEmail;
+
+// Sender information for our emails (特定電子メール法). Keep it to facts we can stand behind.
+const copy = {
+  ja: {
+    title: '運営者情報',
+    description: 'Optimalifyの運営者情報と、広告メールの受信を停止する方法です。',
+    h1: '運営者情報',
+    rows: [
+      {k: '名称', v: 'Optimalify'},
+      {k: '事業内容', v: 'Shopifyアプリ「Optimalify Customer Account」の開発・提供'},
+      {k: '所在地', v: 'ベトナム ハノイ市（Hanoi, Vietnam）'},
+      {k: '連絡先', v: mail, mail: true},
+    ],
+    optOutH: '広告メールの受信拒否方法',
+    optOut: [
+      'Optimalifyからのご案内メールが不要な場合は、件名に「配信停止」と書いて、受け取ったメールにそのままご返信ください。',
+      `または、${mail} 宛てに配信停止のご希望をお送りください。`,
+      'ご連絡をいただいたメールアドレスには、以後ご案内メールをお送りしません。',
+    ],
+  },
+  en: {
+    title: 'Legal notice',
+    description: 'Who runs Optimalify, and how to stop receiving our emails.',
+    h1: 'Legal notice',
+    rows: [
+      {k: 'Name', v: 'Optimalify'},
+      {k: 'Business', v: 'Developer of the Shopify app “Optimalify Customer Account”'},
+      {k: 'Location', v: 'Hanoi, Vietnam'},
+      {k: 'Contact', v: mail, mail: true},
+    ],
+    optOutH: 'How to stop receiving our emails',
+    optOut: [
+      'If you no longer want emails from Optimalify, reply to the email you received with “配信停止” (or “unsubscribe”) in the subject.',
+      `Or write to ${mail} and ask to be removed.`,
+      'We will not send further emails to that address.',
+    ],
+  },
+}[locale];
+---
+
+<BaseLayout title={copy.title} description={copy.description}>
+  <section class="section">
+    <div class="wrap legal">
+      <h1>{copy.h1}</h1>
+      <dl class="rows">
+        {copy.rows.map((r) => (
+          <div class="row">
+            <dt>{r.k}</dt>
+            <dd>{r.mail ? <a href={`mailto:${r.v}`}>{r.v}</a> : r.v}</dd>
+          </div>
+        ))}
+      </dl>
+      <h2 id="opt-out">{copy.optOutH}</h2>
+      {copy.optOut.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal { max-width: 760px; }
+  .legal h1 { margin-bottom: 28px; }
+  .legal h2 { margin: 40px 0 12px; font-size: 1.3rem; }
+  .legal p { color: var(--ink-2); margin: 0 0 10px; }
+  .rows { margin: 0; border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .row dt { font-weight: 650; color: var(--ink); }
+  .row dd { margin: 0; color: var(--ink-2); overflow-wrap: anywhere; }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
