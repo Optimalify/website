@@ -1,15 +1,16 @@
 import type {APIRoute, GetStaticPaths} from 'astro';
-import {getCollection} from 'astro:content';
+import {getHelp, slugOf} from '../../utils/blog';
 
 /**
  * Every Help Center article is also served verbatim as Markdown at
- * `/help/<slug>.md` — the same file the site renders, so the two can't drift.
- * Inter-article links stay relative (`banner.md`), which resolves correctly
- * between these raw files as well as between the rendered pages.
+ * `/help/<slug>.md` (Japanese) and `/en/help/<slug>.md` (English) — the same
+ * file the site renders, so the two can't drift. Inter-article links stay
+ * relative (`banner.md`), which resolves correctly between these raw files as
+ * well as between the rendered pages.
  */
 export const getStaticPaths = (async () => {
-  const articles = await getCollection('help');
-  return articles.map((entry) => ({params: {slug: entry.id}, props: {entry}}));
+  const articles = await getHelp('ja');
+  return articles.map((entry) => ({params: {slug: slugOf(entry.id)}, props: {entry}}));
 }) satisfies GetStaticPaths;
 
 export const GET: APIRoute = ({props}) => {

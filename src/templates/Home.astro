@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AccountMock from '../components/AccountMock.astro';
+import {PLANS, SITE, listingUrl} from '../config';
+import {withLocale, type Locale} from '../i18n';
+import {home} from '../i18n/home';
+import {ui} from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const {locale} = Astro.props;
+const c = home[locale];
+const installLabel = ui[locale].install;
+const L = (path: string) => withLocale(path, locale);
+const installHref = listingUrl('landing');
+const {blocks, faq: faqCopy} = c;
+const faqs = faqCopy.items;
+---
+
+<BaseLayout title={c.title} bare description={ui[locale].siteDescription}>
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow on-brand">{c.hero.eyebrow}</span>
+        <h1>{c.hero.h1[0]}<br />{c.hero.h1[1]}</h1>
+        <p class="hero-lede">{c.hero.lede}</p>
+        <div class="hero-cta">
+          <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
+          <a href={L('/demo')} class="btn btn-on-brand-ghost">{c.hero.demo}</a>
+        </div>
+        <ul class="hero-ticks">
+          {c.hero.ticks.map((x) => <li>{x}</li>)}
+        </ul>
+      </div>
+      <div class="hero-mock">
+        <AccountMock variant="orders" locale={locale} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why now ──────────────────────────────────────────────────────── -->
+  <section class="section why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">{c.why.eyebrow}</span>
+        <h2>{c.why.h2[0]}<br />{c.why.h2[1]}</h2>
+        <p class="lede">
+          {c.why.ledeBefore}<a href="https://shopify.dev/changelog/posts/legacy-customer-accounts-are-deprecated" rel="noopener">{c.why.ledeLink}</a>{c.why.ledeAfter}
+        </p>
+      </div>
+      <div class="why-grid">
+        {c.why.items.map((it) => (
+          <article>
+            <h3>{it.h}</h3>
+            <p>{it.p}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blocks ───────────────────────────────────────────────────────── -->
+  <section class="section blocks" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">{c.blocks.eyebrow}</span>
+        <h2>{c.blocks.h2}</h2>
+        <p class="lede">{c.blocks.lede}</p>
+      </div>
+      <div class="block-grid">
+        {blocks.items.map((b) => (
+          <a class="block-card" href={L(b.href)}>
+            <span class="block-icon">{b.icon}</span>
+            <h3>{b.name}</h3>
+            <p>{b.text}</p>
+            <span class="more">{c.blocks.more}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Deep dives ───────────────────────────────────────────────────── -->
+  <section class="section feature alt">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <span class="eyebrow">{c.trust.eyebrow}</span>
+        <h2>{c.trust.h2}</h2>
+        <p class="lede">{c.trust.lede}</p>
+        <ul class="ticks">
+          {c.trust.ticks.map((x) => <li>{x}</li>)}
+        </ul>
+        <a href={L('/help/trust-badges')} class="text-link">{c.trust.link}</a>
+      </div>
+      <div class="feature-mock"><AccountMock variant="status" locale={locale} /></div>
+    </div>
+  </section>
+
+  <section class="section feature">
+    <div class="wrap feature-grid reverse">
+      <div class="feature-copy">
+        <span class="eyebrow">{c.profile.eyebrow}</span>
+        <h2>{c.profile.h2}</h2>
+        <p class="lede">{c.profile.lede}</p>
+        <ul class="ticks">
+          {c.profile.ticks.map((x) => <li>{x}</li>)}
+        </ul>
+        <a href={L('/help/profile')} class="text-link">{c.profile.link}</a>
+      </div>
+      <div class="feature-mock"><AccountMock variant="profile" locale={locale} /></div>
+    </div>
+  </section>
+
+  <!-- ── How it works ─────────────────────────────────────────────────── -->
+  <section class="section how" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">{c.how.eyebrow}</span>
+        <h2>{c.how.h2}</h2>
+        <p class="lede">{c.how.lede}</p>
+      </div>
+      <ol class="steps">
+        {c.how.steps.map((st, n) => (
+          <li>
+            <span class="num">{n + 1}</span>
+            <h3>{st.h}</h3>
+            <p set:html={st.p} />
+          </li>
+        ))}
+      </ol>
+      <p class="how-foot">
+        {c.how.footBefore}<a href={L('/help/add-blocks-in-editor')}>{c.how.footLink}</a>{c.how.footAfter}
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Pricing ──────────────────────────────────────────────────────── -->
+  <section class="section pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">{c.pricing.eyebrow}</span>
+        <h2>{c.pricing.h2}</h2>
+        <p class="lede">{c.pricing.lede}</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan">
+          <h3>{c.pricing.free}</h3>
+          <p class="price">$0</p>
+          <ul class="ticks">
+            <li>{c.pricing.blocksLine}</li>
+          </ul>
+          <a href={installHref} class="btn btn-ghost">{installLabel}</a>
+        </article>
+        <article class="plan plan-pro">
+          <h3>{c.pricing.pro}</h3>
+          <p class="price">${PLANS.pro.monthly}<span>{c.pricing.perMonth}</span></p>
+          <p class="price-alt">{c.pricing.altPrice}</p>
+          <ul class="ticks">
+            {c.pricing.proTicks.map((x) => <li>{x}</li>)}
+          </ul>
+          <a href={installHref} class="btn btn-primary">{installLabel}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-wrap">
+      <div class="section-head">
+        <span class="eyebrow">{c.faq.eyebrow}</span>
+        <h2>{c.faq.h2}</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="faq-foot">
+        {c.faq.footBefore}<a href={L('/help/faq-troubleshooting')}>{c.faq.footLink}</a>{c.faq.footAfter}
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>{locale === 'en' ? '.' : ''}
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>{c.cta.h2}</h2>
+      <p>{c.cta.p}</p>
+      <div class="hero-cta">
+        <a href={installHref} class="btn btn-on-brand">{installLabel}</a>
+        <a href={L('/help')} class="btn btn-on-brand-ghost">{c.cta.browse}</a>
+      </div>
+      <p class="cta-note">{c.cta.noteBefore}<a href={L('/founding')}>{c.cta.noteLink}</a></p>
+    </div>
+  </section>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {'@type': 'Answer', text: f.a},
+      })),
+    })}
+  />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero { background: var(--brand-gradient); color: #fff; padding: 76px 0 96px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero-grid > *, .feature-grid > * { min-width: 0; }
+  .hero h1 { margin: 20px 0 18px; }
+  .hero-lede { font-size: 1.16rem; color: rgba(255, 255, 255, 0.9); max-width: 46ch; line-height: 1.6; }
+  .eyebrow.on-brand { background: rgba(255, 255, 255, 0.16); color: #fff; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .hero-ticks { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; padding: 0; margin: 28px 0 0; }
+  .hero-ticks li { font-size: 0.9rem; color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; gap: 7px; }
+  .hero-ticks li::before { content: '✓'; font-weight: 700; color: #fff; }
+  .hero-mock { max-width: 520px; justify-self: end; width: 100%; }
+
+  /* ── Why ── */
+  .why { background: var(--page); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why-grid article {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 26px 24px;
+  }
+  .why-grid h3 { margin-bottom: 10px; }
+  .why-grid p { color: var(--muted); font-size: 0.97rem; }
+
+  /* ── Blocks ── */
+  .blocks { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .block-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .block-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px 22px; display: flex; flex-direction: column; gap: 10px;
+    color: inherit; box-shadow: var(--shadow-sm);
+    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  }
+  .block-card:hover {
+    text-decoration: none; transform: translateY(-3px);
+    box-shadow: var(--shadow-md); border-color: var(--brand-500);
+  }
+  .block-icon {
+    width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft);
+    display: grid; place-items: center; font-size: 20px; margin-bottom: 4px;
+  }
+  .block-card p { color: var(--muted); font-size: 0.95rem; flex: 1; }
+  .more { color: var(--brand-600); font-weight: 600; font-size: 0.9rem; margin-top: 6px; }
+
+  /* ── Feature deep dives ── */
+  .feature.alt { background: var(--page); }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .feature-grid.reverse .feature-copy { order: 2; }
+  .feature-copy h2 { margin: 18px 0 16px; }
+  .feature-mock { max-width: 500px; width: 100%; }
+  .ticks { list-style: none; padding: 0; margin: 24px 0 26px; display: grid; gap: 11px; }
+  .ticks li { display: flex; gap: 11px; color: var(--ink-2); font-size: 0.97rem; }
+  .ticks li::before {
+    content: '✓'; color: var(--brand-600); font-weight: 800; flex: 0 0 auto;
+  }
+  .text-link { font-weight: 600; }
+
+  /* ── How ── */
+  .how { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; counter-reset: s; }
+  .steps li {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px 28px; position: relative;
+  }
+  .num {
+    display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px;
+    background: var(--brand-gradient); color: #fff; font-weight: 750; margin-bottom: 16px;
+  }
+  .steps h3 { margin-bottom: 8px; }
+  .steps p { color: var(--muted); font-size: 0.97rem; }
+  .how-foot { text-align: center; margin-top: 28px; color: var(--muted); font-size: 0.95rem; }
+
+  /* ── Pricing ── */
+  .plan-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
+  .plan {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px 28px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-sm);
+  }
+  .plan-pro { border-color: var(--brand-500); box-shadow: var(--shadow-md); }
+  .plan .price { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+  .plan .price span { font-size: 1rem; font-weight: 550; color: var(--muted); }
+  .plan .price-alt { color: var(--muted); font-size: 0.93rem; }
+  .plan .ticks { flex: 1; }
+
+  /* ── FAQ ── */
+  .faq-wrap { max-width: 760px; }
+  .faq-list { display: grid; gap: 10px; }
+  .faq-list details {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 4px 22px;
+  }
+  .faq-list summary {
+    cursor: pointer; list-style: none; padding: 16px 0; font-weight: 650;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: '+'; color: var(--brand-600); font-size: 1.3rem; font-weight: 500; }
+  .faq-list details[open] summary::after { content: '–'; }
+  .faq-list details p { color: var(--muted); font-size: 0.97rem; padding: 0 0 18px; margin-top: -2px; }
+  .faq-foot { text-align: center; margin-top: 26px; color: var(--muted); font-size: 0.93rem; }
+
+  /* ── CTA ── */
+  .cta { background: var(--brand-gradient); color: #fff; padding: 84px 0; }
+  .cta-inner { text-align: center; max-width: 700px; }
+  .cta-inner { margin-inline: auto; }
+  .cta-inner p { color: rgba(255, 255, 255, 0.88); margin-top: 14px; font-size: 1.06rem; }
+  .cta .hero-cta { justify-content: center; }
+  .cta-note { margin-top: 22px; font-size: 0.95rem; }
+  .cta-note a { color: #fff; text-decoration: underline; }
+
+  @media (max-width: 960px) {
+    .hero-grid, .feature-grid { grid-template-columns: 1fr; gap: 44px; }
+    .feature-grid.reverse .feature-copy { order: 0; }
+    .hero-mock, .feature-mock { justify-self: start; max-width: 560px; }
+    .why-grid, .block-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .plan-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 56px 0 68px; }
+    .why-grid, .block-grid { grid-template-columns: 1fr; }
+  }
+</style>

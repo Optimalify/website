@@ -1,0 +1,15 @@
+---
+import type {GetStaticPaths} from 'astro';
+import HelpArticle from '../../../templates/HelpArticle.astro';
+import {getHelp, slugOf} from '../../../utils/blog';
+
+export const getStaticPaths = (async () => {
+  const articles = await getHelp('en');
+  return articles
+    .filter((a) => slugOf(a.id) !== 'index')
+    .map((entry) => ({params: {slug: slugOf(entry.id)}, props: {entry}}));
+}) satisfies GetStaticPaths;
+
+const {entry} = Astro.props;
+---
+<HelpArticle entry={entry} locale="en" />

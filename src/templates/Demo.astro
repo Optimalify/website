@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {SITE, listingUrl} from '../config';
+import {type Locale} from '../i18n';
+import {demo} from '../i18n/pages';
+import {ui} from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const {locale} = Astro.props;
+const c = demo[locale];
+const installLabel = ui[locale].install;
+const installHref = listingUrl('demo');
+
+// Screenshots are shared by both locales (they show the English demo store).
+const shots = [
+  {image: '/img/demo/orders.png', width: 1056, height: 715},
+  {image: '/img/demo/orders-bottom.png', width: 1356, height: 870},
+  {image: '/img/demo/order-status.png', width: 1056, height: 880},
+  {image: '/img/demo/profile.png', width: 1356, height: 640},
+  {image: '/img/demo/page.png', width: 1356, height: 310},
+];
+const pages = c.pages.map((p, i) => ({...p, ...shots[i]}));
+---
+
+<BaseLayout title={c.title} description={c.description} surface="demo">
+  <section class="wrap demo-head">
+    <h1>{c.h1}</h1>
+    <p>{c.lede}</p>
+    <div class="demo-actions">
+      <a href={installHref} class="btn btn-primary">{installLabel}</a>
+      <a href="https://optimalify-customer-account.myshopify.com/pages/use-cases" class="btn btn-ghost">{c.useCases}</a>
+    </div>
+    <p class="demo-note">{c.note}</p>
+  </section>
+
+  <section class="wrap demo-list">
+    {pages.map((page) => (
+      <article>
+        <h2>{page.title}</h2>
+        <p class="blocks">{page.blocks}</p>
+        <p>{page.text}</p>
+        <img src={page.image} alt={page.alt} width={page.width} height={page.height} />
+      </article>
+    ))}
+  </section>
+
+  <section class="wrap demo-end">
+    <h2>{c.endH}</h2>
+    <p>{c.endBefore}<a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>{c.endAfter}</p>
+    <a href={installHref} class="btn btn-primary">{installLabel}</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .demo-head { padding-top: 56px; padding-bottom: 32px; }
+  .demo-head p { max-width: 640px; margin: 12px 0 22px; font-size: 1.1rem; }
+  .demo-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .demo-head .demo-note { margin: 12px 0 0; font-size: 0.95rem; }
+  .demo-list article { margin: 0 0 56px; }
+  .demo-list h2 { margin: 0 0 4px; }
+  .demo-list p { margin: 0 0 8px; }
+  .demo-list .blocks { font-weight: 650; color: var(--brand-600); }
+  .demo-list img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 14px;
+    border: 1px solid #e4e4ee;
+    border-radius: 12px;
+  }
+  .demo-end { padding-bottom: 72px; }
+  .demo-end p { margin: 8px 0 18px; }
+</style>

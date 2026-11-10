@@ -37,9 +37,12 @@ export function listingUrl(medium: Surface): string {
 export const installLabel = 'Add to Shopify';
 
 /** mailto: link for the Founding merchants offer — subject and body template pre-filled. */
-export const foundingMailto =
-  `mailto:${SITE.supportEmail}` +
-  `?subject=${encodeURIComponent('Founding merchant')}` +
-  `&body=${encodeURIComponent(
-    ['Store URL: ', 'What I would use first (Banner, Profile, Trust badges, Payment icons, Support links): ', ''].join('\n'),
-  )}`;
+export function foundingMailtoFor(locale: 'ja' | 'en'): string {
+  const subject = locale === 'ja' ? 'Founding merchant（ファウンディングマーチャント参加希望）' : 'Founding merchant';
+  const body =
+    locale === 'ja'
+      ? ['ストアのURL: ', '最初に使いたいブロック（バナー、プロフィール、トラストバッジ、お支払いアイコン、サポート連絡先など）: ', '']
+      : ['Store URL: ', 'What I would use first (Banner, Profile, Trust badges, Payment icons, Support links): ', ''];
+  return `mailto:${SITE.supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join('\n'))}`;
+}
+export const foundingMailto = foundingMailtoFor('en');

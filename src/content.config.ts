@@ -1,10 +1,11 @@
 import {defineCollection, z} from 'astro:content';
 import {glob} from 'astro/loaders';
 
-// The Help Center. One Markdown file per article — the same file is rendered as
-// HTML at /help/<slug> and served verbatim at /help/<slug>.md.
+// The Help Center. One Markdown file per article per locale (help/ja/<slug>.md,
+// help/en/<slug>.md) — the same file is rendered as HTML at /help/<slug> (ja) or
+// /en/help/<slug> and served verbatim at the same path + `.md`.
 const help = defineCollection({
-  loader: glob({pattern: '*.md', base: './src/content/help'}),
+  loader: glob({pattern: '{ja,en}/*.md', base: './src/content/help'}),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -16,7 +17,7 @@ const help = defineCollection({
 // /blog/<slug>, listed at /blog and in /rss.xml. An `## FAQ` section whose
 // questions are `###` headings also becomes FAQPage JSON-LD (src/utils/blog.ts).
 const blog = defineCollection({
-  loader: glob({pattern: '*.md', base: './src/content/blog'}),
+  loader: glob({pattern: '{ja,en}/*.md', base: './src/content/blog'}),
   schema: z.object({
     title: z.string(),
     description: z.string(),

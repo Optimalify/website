@@ -1,0 +1,7 @@
+---
+import HelpArticle from '../../../templates/HelpArticle.astro';
+import {getHelp, slugOf} from '../../../utils/blog';
+
+const entry = (await getHelp('en')).find((e) => slugOf(e.id) === 'index')!;
+---
+<HelpArticle entry={entry} locale="en" />
