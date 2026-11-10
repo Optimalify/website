@@ -17,35 +17,52 @@ npm run preview   # serve dist/
 
 | Path | What |
 |---|---|
-| `src/pages/index.astro` | The landing page — all of its copy is in the file |
-| `src/content/help/*.md` | **The Help Center. Source of truth for the KB.** |
-| `src/pages/help/[slug].astro` | Renders one article as HTML at `/help/<slug>` |
-| `src/pages/help/[slug].md.ts` | Serves the *same file* verbatim at `/help/<slug>.md` |
-| `src/pages/llms.txt.ts` | `/llms.txt` — machine-readable index of the KB |
+| `src/i18n/` | Locale helpers (`index.ts`), shared UI strings (`ui.ts`), page copy (`home.ts`, `pages.ts`) — **ja and en side by side** |
+| `src/templates/` | The page templates (Home, Founding, Demo, BlogIndex, BlogPost, HelpArticle); they take a `locale` prop |
+| `src/pages/**` | Japanese routes at `/…`; `src/pages/en/**` is the English twin — thin wrappers around the templates |
+| `src/content/help/{ja,en}/*.md` | **The Help Center. Source of truth for the KB**, one file per article per locale |
+| `src/pages/help/[slug].astro` | Renders one article as HTML at `/help/<slug>` (`/en/help/<slug>` for English) |
+| `src/pages/help/[slug].md.ts` | Serves the *same file* verbatim at `/help/<slug>.md` (`/en/help/<slug>.md`) |
+| `src/pages/llms.txt.ts` | `/llms.txt` (ja) and `/en/llms.txt` — machine-readable index of the KB |
 | `src/components/AccountMock.astro` | The customer-account mockups, rebuilt in HTML |
 | `src/config.ts` | Domain, support email, App Store URL + UTM helper, pricing facts |
-| `src/pages/founding.astro` | The Founding merchants offer page |
-| `src/content/blog/*.md` | Blog posts |
+| `src/content/blog/{ja,en}/*.md` | Blog posts |
+
+### Languages
+
+Japanese is the default locale and lives **unprefixed** (`/`, `/help/banner`, `/blog/…`, `/rss.xml`);
+English lives under **`/en/`**. Slugs are identical in both, so the counterpart of any page is the
+same path with `/en` added or removed (`alternatePath()` in `src/i18n/index.ts`).
+
+- Every page carries `hreflang` `ja` / `en` / `x-default` (= ja), `<html lang>`, `og:locale`, and a
+  language switcher in the header. The sitemap has per-URL alternates (`@astrojs/sitemap` `i18n`).
+- **Old English URLs are not redirected**: GitHub Pages cannot send a 301, so `/help/banner` etc. now
+  serve the Japanese article and the English one is at `/en/help/banner`. Visitors whose browser is
+  not Japanese get a dismissible "View in English" bar (no forced redirect, so crawlers and shared
+  links keep their URL).
+- Adding an article/post: add the file in **both** `ja/` and `en/` with the same name. Site copy
+  lives in `src/i18n/*.ts`; change both locales together.
+- Blog FAQ: the section heading is `## FAQ` in English and `## よくある質問` in Japanese.
 
 ### The Help Center is Markdown, twice
 
-Every article is served two ways from one file:
+Every article is served two ways from one file per locale:
 
-- `https://optimalify.org/help/banner` — rendered page
-- `https://optimalify.org/help/banner.md` — the raw Markdown
+- `https://optimalify.org/help/banner` — rendered page (Japanese; English at `/en/help/banner`)
+- `https://optimalify.org/help/banner.md` — the raw Markdown (English at `/en/help/banner.md`)
 
-Because both come from `src/content/help/banner.md`, they can't drift. Inter-article links
+Because both come from `src/content/help/ja/banner.md`, they can't drift. Inter-article links
 are written **relative** (`[Banner](banner.md)`) so they resolve correctly between the raw
 `.md` files; a remark plugin in `astro.config.mjs` rewrites them to `/help/banner` for the
 rendered pages. Keep writing them that way.
 
-Adding an article: drop a `.md` file in `src/content/help/` with `title`, `description` and
+Adding an article: drop a `.md` file in `src/content/help/ja/` and `src/content/help/en/` with `title`, `description` and
 `order` frontmatter. It appears in the sidebar, the `.md` route, `llms.txt` and the sitemap
 automatically.
 
 ## The blog
 
-Posts are Markdown files in `src/content/blog/` with `title`, `description`, `date` and `tags`
+Posts are Markdown files in `src/content/blog/{ja,en}/` with `title`, `description`, `date` and `tags`
 frontmatter (`updated` and `draft` are optional). They render at `/blog/<slug>`, are listed at
 `/blog` and in `/rss.xml`, and are in the sitemap and `llms.txt`.
 

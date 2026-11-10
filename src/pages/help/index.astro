@@ -1,10 +1,7 @@
 ---
-import {getCollection, render} from 'astro:content';
-import HelpLayout from '../../layouts/HelpLayout.astro';
+import HelpArticle from '../../templates/HelpArticle.astro';
+import {getHelp, slugOf} from '../../utils/blog';
 
-const entry = (await getCollection('help')).find((e) => e.id === 'index')!;
-const {Content} = await render(entry);
+const entry = (await getHelp('ja')).find((e) => slugOf(e.id) === 'index')!;
 ---
-<HelpLayout title={entry.data.title} description={entry.data.description} slug="index">
-  <Content />
-</HelpLayout>
+<HelpArticle entry={entry} locale="ja" />

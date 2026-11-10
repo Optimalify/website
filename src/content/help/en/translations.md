@@ -9,7 +9,7 @@ text in that language when you've translated it, and your original text when you
 
 ## What gets translated
 - **Built-in wording** — buttons and default labels such as "Download invoice" — comes
-  translated in English, Vietnamese, German, French, Spanish, Dutch and Italian. Nothing to set up.
+  translated in English, Japanese, Vietnamese, German, French, Spanish, Dutch and Italian. Nothing to set up.
 - **Your own text** in Banner, Support, Social links, FAQ, Store policies, Rich content, Trust
   badges, Payment icons and Custom pages: you translate it, in either of the two ways below.
 - **Profile custom fields** have their own per-language labels in the Profile block.

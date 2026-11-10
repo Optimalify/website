@@ -2,50 +2,55 @@
 import BaseLayout from './BaseLayout.astro';
 import '../styles/prose.css';
 import {SITE} from '../config';
-import {getCollection} from 'astro:content';
+import {getHelp, slugOf} from '../utils/blog';
+import {withLocale, type Locale} from '../i18n';
+import {ui} from '../i18n/ui';
 
 interface Props {
   title: string;
   description: string;
   /** Collection id of the current article, so the sidebar can mark it. */
   slug: string;
+  locale: Locale;
 }
-const {title, description, slug} = Astro.props;
+const {title, description, slug, locale} = Astro.props;
+const t = ui[locale];
+const L = (path: string) => withLocale(path, locale);
 
-const articles = (await getCollection('help')).sort((a, b) => a.data.order - b.data.order);
+const articles = await getHelp(locale);
 const isHome = slug === 'index';
-const rawHref = isHome ? '/help/index.md' : `/help/${slug}.md`;
+const rawHref = L(isHome ? '/help/index.md' : `/help/${slug}.md`);
 ---
 
-<BaseLayout title={`${title} — Help Center`} description={description}>
+<BaseLayout title={`${title} — ${t.help.title}`} description={description}>
   <div class="help-shell wrap">
-    <aside class="help-nav" aria-label="Help Center articles">
-      <p class="nav-title"><a href="/help">Help Center</a></p>
+    <aside class="help-nav" aria-label={t.help.navLabel}>
+      <p class="nav-title"><a href={L('/help')}>{t.help.title}</a></p>
       <nav>
         {articles
-          .filter((a) => a.id !== 'index')
+          .filter((a) => slugOf(a.id) !== 'index')
           .map((a) => (
-            <a href={`/help/${a.id}`} class={a.id === slug ? 'on' : ''}>
+            <a href={L(`/help/${slugOf(a.id)}`)} class={slugOf(a.id) === slug ? 'on' : ''}>
               {a.data.title}
             </a>
           ))}
       </nav>
       <p class="nav-help">
-        Need a hand?<br />
+        {t.help.needHand}<br />
         <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
       </p>
     </aside>
 
     <article class="help-body">
       <header class="help-head">
-        {!isHome && <p class="crumb"><a href="/help">← Help Center</a></p>}
+        {!isHome && <p class="crumb"><a href={L('/help')}>{t.help.back}</a></p>}
         <h1>{title}</h1>
         <p class="lede">{description}</p>
-        <a class="raw-link" href={rawHref}>View as Markdown ↗</a>
+        <a class="raw-link" href={rawHref}>{t.help.viewMarkdown}</a>
       </header>
       <div class="prose"><slot /></div>
       <footer class="help-foot">
-        <p>Still stuck? Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> with your store URL, the block, and a screenshot.</p>
+        <p set:html={t.help.stillStuck(`<a href="mailto:${SITE.supportEmail}">${SITE.supportEmail}</a>`)} />
       </footer>
     </article>
   </div>

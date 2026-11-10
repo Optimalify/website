@@ -6,58 +6,92 @@
  */
 interface Props {
   variant: 'orders' | 'status' | 'profile';
+  locale?: 'ja' | 'en';
 }
-const {variant} = Astro.props;
+const {variant, locale = 'en'} = Astro.props;
+
+// Sample storefront copy shown inside the mock (not site UI).
+const copy = {
+  en: {
+    shop: 'Sarah’s Shop', orders: 'Orders', profile: 'Profile', banner: 'Banner',
+    welcome: 'Welcome back, Sarah', welcomeBody: 'Your order #1001 is on its way — track it anytime.', trackOrder: 'Track order',
+    order: 'Order', d1: 'May 24, 2026', d2: 'May 12, 2026', outFor: 'Out for delivery', delivered: 'Delivered',
+    p1: '$749.95', p2: '$129.00', view: 'View order', payIcons: 'Payment icons',
+    placed: 'Placed May 24, 2026', eta: 'Estimated arrival May 28 · Standard shipping', tracking: 'Tracking number', track: 'Track',
+    trustBlock: 'Trust badges', confidence: 'Shop with confidence',
+    b1: ['Secure checkout', 'SSL-encrypted payment'], b2: ['Money-back guarantee', '30-day money-back'],
+    b3: ['Fast shipping', 'Ships within 24 hours'], b4: ['Authentic products', '100% genuine, guaranteed'],
+    support: 'Support', email: 'Email us', whatsapp: 'WhatsApp', helpCenter: 'Help center',
+    name: 'Sarah Johnson', edit: 'Edit', capture: 'Profile capture', prefs: 'Your preferences',
+    prefsBody: 'Tell us a bit about yourself so we can tailor offers to you.', birthday: 'Birthday', bday: 'May 2, 1994',
+    hear: 'What would you like to hear about?', c1: 'New arrivals', c2: 'Sales & promotions', c3: 'Birthday offers', c4: 'Back-in-stock alerts', save: 'Save',
+  },
+  ja: {
+    shop: 'サラのショップ', orders: '注文履歴', profile: 'プロフィール', banner: 'バナー',
+    welcome: 'おかえりなさい、サラさん', welcomeBody: 'ご注文 #1001 は配送中です。いつでも追跡できます。', trackOrder: '注文を追跡',
+    order: '注文', d1: '2026年5月24日', d2: '2026年5月12日', outFor: '配達中', delivered: '配達済み',
+    p1: '$749.95', p2: '$129.00', view: '注文を表示', payIcons: 'お支払いアイコン',
+    placed: '注文日 2026年5月24日', eta: '到着予定 5月28日 · 通常配送', tracking: '追跡番号', track: '追跡',
+    trustBlock: 'トラストバッジ', confidence: '安心してお買い物を',
+    b1: ['安全なチェックアウト', 'SSL暗号化決済'], b2: ['返金保証', '30日間の返金保証'],
+    b3: ['スピード配送', '24時間以内に出荷'], b4: ['正規品', '100%本物をお約束'],
+    support: 'サポート', email: 'メールで問い合わせ', whatsapp: 'WhatsApp', helpCenter: 'ヘルプセンター',
+    name: 'サラ・ジョンソン', edit: '編集', capture: 'プロフィール情報の取得', prefs: 'お客様の設定',
+    prefsBody: 'あなたに合ったご案内をお届けするため、簡単なプロフィールを教えてください。', birthday: '誕生日', bday: '1994年5月2日',
+    hear: 'どんなお知らせを受け取りたいですか？', c1: '新商品', c2: 'セール・プロモーション', c3: '誕生日のご優待', c4: '再入荷のお知らせ', save: '保存',
+  },
+}[locale];
+
 ---
 
 <div class={`mock mock-${variant}`}>
   <div class="mock-top">
     <span class="shop-mark"></span>
-    <span class="shop-name">Sarah’s Shop</span>
+    <span class="shop-name">{copy.shop}</span>
     <span class="avatar">S</span>
   </div>
 
   {variant !== 'status' && (
     <div class="tabs">
-      <span class={variant === 'orders' ? 'tab on' : 'tab'}>Orders</span>
-      <span class={variant === 'profile' ? 'tab on' : 'tab'}>Profile</span>
+      <span class={variant === 'orders' ? 'tab on' : 'tab'}>{copy.orders}</span>
+      <span class={variant === 'profile' ? 'tab on' : 'tab'}>{copy.profile}</span>
     </div>
   )}
 
   {variant === 'orders' && (
     <>
-      <div class="block banner" data-label="Banner">
+      <div class="block banner" data-label={copy.banner}>
         <span class="tick">✓</span>
         <div>
-          <strong>Welcome back, Sarah</strong>
-          <p>Your order #1001 is on its way — track it anytime.</p>
+          <strong>{copy.welcome}</strong>
+          <p>{copy.welcomeBody}</p>
         </div>
-        <span class="banner-cta">Track order</span>
+        <span class="banner-cta">{copy.trackOrder}</span>
       </div>
 
       <div class="order">
         <div class="order-head">
-          <div><strong>Order #1001</strong><p class="dim">May 24, 2026</p></div>
-          <span class="pill warn">Out for delivery</span>
+          <div><strong>{copy.order} #1001</strong><p class="dim">{copy.d1}</p></div>
+          <span class="pill warn">{copy.outFor}</span>
         </div>
         <div class="order-foot">
           <div class="thumbs"><i class="t1"></i><i class="t2"></i></div>
-          <div class="right"><strong>$749.95</strong><p class="link">View order</p></div>
+          <div class="right"><strong>{copy.p1}</strong><p class="link">{copy.view}</p></div>
         </div>
       </div>
 
       <div class="order">
         <div class="order-head">
-          <div><strong>Order #1000</strong><p class="dim">May 12, 2026</p></div>
-          <span class="pill ok">Delivered</span>
+          <div><strong>{copy.order} #1000</strong><p class="dim">{copy.d2}</p></div>
+          <span class="pill ok">{copy.delivered}</span>
         </div>
         <div class="order-foot">
           <div class="thumbs"><i class="t1"></i><i class="t2"></i><i class="t3"></i></div>
-          <div class="right"><strong>$129.00</strong><p class="link">View order</p></div>
+          <div class="right"><strong>{copy.p2}</strong><p class="link">{copy.view}</p></div>
         </div>
       </div>
 
-      <div class="block pay-row" data-label="Payment icons">
+      <div class="block pay-row" data-label={copy.payIcons}>
         <span class="pay visa">VISA</span>
         <span class="pay mc"><i></i><i></i></span>
         <span class="pay amex">AMEX</span>
@@ -69,32 +103,32 @@ const {variant} = Astro.props;
 
   {variant === 'status' && (
     <>
-      <p class="crumb">‹ Orders</p>
-      <h4 class="mock-h">Order #1001</h4>
-      <p class="dim">Placed May 24, 2026</p>
+      <p class="crumb">‹ {copy.orders}</p>
+      <h4 class="mock-h">{copy.order} #1001</h4>
+      <p class="dim">{copy.placed}</p>
       <div class="order plain">
         <div class="status-line">
           <span class="tick solid">✓</span>
-          <div><strong>Out for delivery</strong><p class="dim">Estimated arrival May 28 · Standard shipping</p></div>
+          <div><strong>{copy.outFor}</strong><p class="dim">{copy.eta}</p></div>
         </div>
         <div class="track">
-          <div><p class="lbl">Tracking number</p><p class="mono">1Z999AA10123456784</p></div>
-          <span class="link">Track</span>
+          <div><p class="lbl">{copy.tracking}</p><p class="mono">1Z999AA10123456784</p></div>
+          <span class="link">{copy.track}</span>
         </div>
-        <div class="block badges" data-label="Trust badges">
-          <strong class="badges-h">Shop with confidence</strong>
+        <div class="block badges" data-label={copy.trustBlock}>
+          <strong class="badges-h">{copy.confidence}</strong>
           <ul>
-            <li><span class="ic">🔒</span><div><strong>Secure checkout</strong><p class="dim">SSL-encrypted payment</p></div></li>
-            <li><span class="ic">💲</span><div><strong>Money-back guarantee</strong><p class="dim">30-day money-back</p></div></li>
-            <li><span class="ic">🚚</span><div><strong>Fast shipping</strong><p class="dim">Ships within 24 hours</p></div></li>
-            <li><span class="ic">✅</span><div><strong>Authentic products</strong><p class="dim">100% genuine, guaranteed</p></div></li>
+            <li><span class="ic">🔒</span><div><strong>{copy.b1[0]}</strong><p class="dim">{copy.b1[1]}</p></div></li>
+            <li><span class="ic">💲</span><div><strong>{copy.b2[0]}</strong><p class="dim">{copy.b2[1]}</p></div></li>
+            <li><span class="ic">🚚</span><div><strong>{copy.b3[0]}</strong><p class="dim">{copy.b3[1]}</p></div></li>
+            <li><span class="ic">✅</span><div><strong>{copy.b4[0]}</strong><p class="dim">{copy.b4[1]}</p></div></li>
           </ul>
         </div>
       </div>
-      <div class="block support" data-label="Support">
-        <span class="sup">✉ Email us</span>
-        <span class="sup">💬 WhatsApp</span>
-        <span class="sup">❔ Help center</span>
+      <div class="block support" data-label={copy.support}>
+        <span class="sup">✉ {copy.email}</span>
+        <span class="sup">💬 {copy.whatsapp}</span>
+        <span class="sup">❔ {copy.helpCenter}</span>
       </div>
     </>
   )}
@@ -103,22 +137,22 @@ const {variant} = Astro.props;
     <>
       <div class="order plain row-card">
         <span class="avatar big">SJ</span>
-        <div><strong>Sarah Johnson</strong><p class="dim">sarah.johnson@example.com</p></div>
-        <span class="link">Edit</span>
+        <div><strong>{copy.name}</strong><p class="dim">sarah.johnson@example.com</p></div>
+        <span class="link">{copy.edit}</span>
       </div>
-      <div class="block prefs" data-label="Profile capture">
-        <strong>Your preferences</strong>
-        <p class="dim">Tell us a bit about yourself so we can tailor offers to you.</p>
-        <p class="lbl">Birthday</p>
-        <div class="field"><span>🗓</span> May 2, 1994</div>
-        <p class="lbl">What would you like to hear about?</p>
+      <div class="block prefs" data-label={copy.capture}>
+        <strong>{copy.prefs}</strong>
+        <p class="dim">{copy.prefsBody}</p>
+        <p class="lbl">{copy.birthday}</p>
+        <div class="field"><span>🗓</span> {copy.bday}</div>
+        <p class="lbl">{copy.hear}</p>
         <ul class="checks">
-          <li><i class="box on">✓</i> New arrivals</li>
-          <li><i class="box on">✓</i> Sales &amp; promotions</li>
-          <li><i class="box"></i> Birthday offers</li>
-          <li><i class="box"></i> Back-in-stock alerts</li>
+          <li><i class="box on">✓</i> {copy.c1}</li>
+          <li><i class="box on">✓</i> {copy.c2}</li>
+          <li><i class="box"></i> {copy.c3}</li>
+          <li><i class="box"></i> {copy.c4}</li>
         </ul>
-        <span class="save">Save</span>
+        <span class="save">{copy.save}</span>
       </div>
     </>
   )}

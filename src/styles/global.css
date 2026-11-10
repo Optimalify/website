@@ -125,3 +125,14 @@ img { max-width: 100%; height: auto; display: block; }
   body { font-size: 16px; }
   .section { padding: 60px 0; }
 }
+
+/* Japanese typography: a CJK-capable stack, looser leading, no tracking, no forced caps. */
+:lang(ja) {
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    'Noto Sans JP', 'Yu Gothic', Meiryo, 'Segoe UI', Roboto, sans-serif;
+}
+:lang(ja) body { line-height: 1.85; line-break: strict; word-break: auto-phrase; overflow-wrap: anywhere; }
+:lang(ja) h1, :lang(ja) h2, :lang(ja) h3, :lang(ja) h4 { line-height: 1.4; letter-spacing: 0; }
+:lang(ja) h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+:lang(ja) .eyebrow { letter-spacing: .02em; text-transform: none; }
+:lang(ja) .lede { line-height: 1.85; }

@@ -1,21 +1,24 @@
 import rss from '@astrojs/rss';
 import type {APIContext} from 'astro';
 import {SITE} from '../config';
-import {getPosts} from '../utils/blog';
+import {getPosts, slugOf} from '../utils/blog';
+import {withLocale} from '../i18n';
+import {ui} from '../i18n/ui';
 
 export async function GET(context: APIContext) {
-  const posts = await getPosts();
+  const t = ui['ja'];
+  const posts = await getPosts('ja');
   return rss({
-    title: `${SITE.name} blog`,
-    description: 'Practical guides for Shopify merchants on customer account pages.',
+    title: t.blog.feedTitle,
+    description: t.blog.feedDescription,
     site: context.site ?? SITE.url,
     items: posts.map((p) => ({
       title: p.data.title,
       description: p.data.description,
       pubDate: p.data.date,
-      link: `/blog/${p.id}/`,
+      link: withLocale(`/blog/${slugOf(p.id)}/`, 'ja'),
       categories: p.data.tags,
     })),
-    customData: '<language>en</language>',
+    customData: '<language>ja</language>',
   });
 }
