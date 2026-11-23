@@ -28,6 +28,8 @@ customer account pages](add-blocks-in-editor.md)**.
 | [FAQ block](faq.md) | Common questions in an expandable list |
 | [Store policies](store-policies.md) | Returns, shipping and other policies as an expandable list |
 | [Rich content](rich-content.md) | An image, heading, text and button to promote or inform |
+| [Buy again](buy-again.md) | A most-purchased products grid and a Buy this again button on each order line |
+| [Member wallet](member-wallet.md) | A loyalty card with points, rank and a membership QR code |
 | [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
 | [Translate your blocks](translations.md) | Show block text in each customer's language |
 | [FAQ & troubleshooting](faq-troubleshooting.md) | Common questions and fixes (e.g. "my block doesn't show") |
@@ -46,5 +48,7 @@ customer account pages](add-blocks-in-editor.md)**.
 | **FAQ** | Order status, Orders, Profile | Blocks → FAQ |
 | **Store policies** | Order status, Orders, Profile | Blocks → Store policies |
 | **Rich content** | Order status, Orders, Profile, footer | Blocks → Rich content |
+| **Buy again** | Orders (grid), Order status (per line) | Blocks → Buy again |
+| **Member wallet** | Profile, Orders | Blocks → Member wallet |
 
 Need a hand? Email **mia@optimalify.org**.
