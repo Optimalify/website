@@ -50,5 +50,6 @@ customer account pages](add-blocks-in-editor.md)**.
 | **Rich content** | Order status, Orders, Profile, footer | Blocks → Rich content |
 | **Buy again** | Orders (grid), Order status (per line) | Blocks → Buy again |
 | **Member wallet** | Profile, Orders | Blocks → Member wallet |
+| **Pages** | Its own page in the account, opened from the account menu | Blocks → Pages |
 
 Need a hand? Email **mia@optimalify.org**.

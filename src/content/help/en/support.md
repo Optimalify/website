@@ -28,15 +28,15 @@ Support** block once in the editor and it shows across the account area.
 | **WhatsApp** | A WhatsApp number — opens a chat (`wa.me`). |
 | **Help center URL** | Link to your help/FAQ pages. |
 | **Report a problem URL** | Link to a form or page for issues. |
-| **Layout** | How channels are arranged: **List**, **Inline**, **Grid**, or **Buttons**. |
-| **Alignment** | **Left** or **Center** (applies to inline/grid layouts). |
+| **Layout** | How channels are arranged: **Stacked list**, **Inline row**, or **Two columns**. |
+| **Alignment** | **Left**, **Center**, or **Right**. |
 
 Leave any channel blank to hide it — only the fields you fill in appear.
 
 ## Tips
-- Use **Buttons** layout to make the channels stand out; **List** for a compact look.
+- Use **Inline row** for a light single-line footer; **Stacked list** or **Two columns** when you show several channels.
 - The **Help center URL** is a great place to link *this* help center or your own FAQ.
-- Only one Support entry is used at a time; leave the block's **Entry handle** blank to show it.
+- Only one Support entry is used at a time; leave the block's **Entry handle** blank.
 
 ## Privacy
 The Support block shows only the contact details you enter — it reads no customer data.

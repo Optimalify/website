@@ -21,8 +21,8 @@ order: 8
 | **見出し（Heading）** | セクションのタイトルです。例：「ご利用可能なお支払い方法」（最大80文字）。 |
 | **お支払い方法（Payment methods）** | 一覧から選択します。不要なものは削除できます。 |
 | **おすすめにリセット（Reset to recommended）** | 一般的な基本セットをワンクリックで復元します。 |
-| **レイアウト（Layout）** | **横並び（Inline）**（1行）、**グリッド（Grid）**、**縦並び（Stacked）**。 |
-| **配置（Alignment）** | **左揃え（Left）**または**中央揃え（Center）**。 |
+| **レイアウト（Layout）** | **横並び（Inline row）**（1行）、**グリッド（Grid）**、**縦並び（Stacked）**。 |
+| **配置（Alignment）** | **左揃え（Left）**、**中央揃え（Center）**、**右揃え（Right）**。 |
 
 ## 利用できるお支払い方法
 Visa · Mastercard · American Express · PayPal · Apple Pay · Shop Pay · Google Pay · Discover · Diners Club · JCB · UnionPay · Maestro · Klarna · Afterpay · Affirm · iDEAL · Bancontact · Sofort · Alipay · WeChat Pay。
@@ -32,6 +32,6 @@ Visa · Mastercard · American Express · PayPal · Apple Pay · Shop Pay · Goo
 ## ヒント
 - **実際に対応している**お支払い方法のみを表示してください。実態と異なるアイコンは信頼を損ないます。
 - フッターにコンパクトに表示したい場合は**横並び**、多くのお支払い方法を表示する場合は**グリッド**を使用してください。
-- 4つの場所に配置できるため、対応しているお支払い方法を複数の場所で伝えることができます（**エントリーハンドル（Entry handle）**を使えば、すべての場所で同じセットを表示することも、配置ごとに異なるセットを表示することもできます）。
+- 4つの場所に配置できるため、対応しているお支払い方法を複数の場所で伝えることができます（同じセットがすべての場所に表示されます）。
 
 表示されない場合は、[よくある質問(FAQ)とトラブルシューティング](faq-troubleshooting.md)をご覧ください。

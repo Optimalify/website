@@ -22,8 +22,8 @@ Links** block wherever you want it in the editor.
 | Field | Notes |
 |---|---|
 | **Links** | Pick a network (Facebook, Instagram, X, TikTok, YouTube, Pinterest, LinkedIn) or choose another site, then paste the URL. |
-| **Layout** | **List**, **Inline**, or **Grid**. |
-| **Alignment** | **Left** or **Center**. |
+| **Layout** | **List**, **Inline row**, or **Grid**. |
+| **Alignment** | **Left**, **Center**, or **Right**. |
 
 Every link must be a **full URL starting with `https://`** — for example
 `https://instagram.com/yourshop`. The app rejects anything else.
@@ -31,8 +31,7 @@ Every link must be a **full URL starting with `https://`** — for example
 ## Tips
 - Social links need your input before they show: add at least one link, or the block has
   nothing to display.
-- Each placement can show a different entry. Set the block's **Entry handle** in the editor to
-  the entry you want there; leave it blank to show your default.
+- You edit a single Social links entry, and every placement shows it.
 - Use **Inline** for a compact strip in the footer; **Grid** if you list many sites.
 
 ## Who sees it, and plans

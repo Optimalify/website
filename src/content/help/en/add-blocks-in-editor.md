@@ -56,16 +56,16 @@ Where each block can go:
 
 ## Choose which entry a block shows — the "Entry handle"
 
-Banner, Support, Trust badges, and Payment icons let you create **more than one entry** in
-Optimalify (for example, two different banners). When you place a block in the editor, it has
-one setting:
+Only **Banner** (and **Pages**, which are full pages) let you create **more than one entry** in
+Optimalify, for example two different banners. Support, Trust badges, Payment icons, Social
+links, FAQ, Store policies and Rich content each edit a single entry.
 
-- **Entry handle** — type the handle of the entry you want this placement to show.
-- **Leave it blank** to show your shop **default** (the first active entry).
-
-This means you can place the *same* block on two pages and show a *different* entry on each —
-e.g. a "Holiday sale" banner on Orders and a "Delivery delays" banner on Order status. You'll
-find each entry's handle in Optimalify on the block's list page.
+Banner, Support, Trust badges, Payment icons, Social links, FAQ, Store policies and Rich content
+have one setting in the editor, **Entry handle** — the handle of the entry you want that
+placement to show. **Leave it blank** to show your shop **default** (the first active
+entry). Optimalify doesn't display entry handles in the app, so you usually won't need it. To show
+a different banner on each page, leave the handle blank and set each banner's **Where to show**
+placements instead — see [Banner placements & targeting](banner-targeting.md).
 
 ## Turn it on
 

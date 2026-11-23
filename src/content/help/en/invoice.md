@@ -40,6 +40,8 @@ subtotal, discounts, shipping, taxes, and the total — in the order's currency.
 - Only **signed-in customers** can download, and only **their own** orders — every download
   link is signed and expires after a few minutes.
 - Guest-checkout orders (no customer account attached) don't offer the action.
+- Orders older than about **60 days** can't show **Download invoice**: the app can only read
+  recent orders, so the action is hidden on older ones.
 
 ## Not showing up?
 
