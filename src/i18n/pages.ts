@@ -36,7 +36,7 @@ export const founding: Record<Locale, FoundingCopy> = {
     getsH: '参加特典',
     gets: [
       {title: 'Proプランを6か月間無料',
-        text: `11種類すべてのブロックを、6か月間無料でご利用いただけます。Proプランの通常料金は月額${price}または年額${priceY}です。`},
+        text: `13種類すべてのブロックを、6か月間無料でご利用いただけます。Proプランの通常料金は月額${price}または年額${priceY}です。`},
       {title: '開発者に直接つながる窓口',
         text: 'ご連絡いただくメールは、実際に確認している受信箱に届きます。通話でいただいた内容は、Optimalifyを開発しているメンバーに直接共有されます。'},
       {title: '次に作るものに意見できる',
@@ -78,7 +78,7 @@ export const founding: Record<Locale, FoundingCopy> = {
     getsH: 'What you get',
     gets: [
       {title: 'Pro free for 6 months',
-        text: `All 11 blocks with no charge for six months. Pro is normally ${price}/month or ${priceY}/year.`},
+        text: `All 13 blocks with no charge for six months. Pro is normally ${price}/month or ${priceY}/year.`},
       {title: 'A direct line to the builders',
         text: 'You email a real inbox, and what you tell us on the call goes straight to the people building Optimalify.'},
       {title: 'A say in what we build next',

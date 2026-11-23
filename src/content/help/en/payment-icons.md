@@ -23,8 +23,8 @@ Payment Icons** block wherever you want it in the editor.
 | **Heading** | Section title, e.g. "We accept" (max 80). |
 | **Payment methods** | Pick from the catalogue; remove any you don't need. |
 | **Reset to recommended** | Restores the common baseline set in one click. |
-| **Layout** | **Inline** (one row), **Grid**, or **Stacked**. |
-| **Alignment** | **Left** or **Center**. |
+| **Layout** | **Inline row**, **Grid**, or **Stacked**. |
+| **Alignment** | **Left**, **Center**, or **Right**. |
 
 ## Available payment methods
 Visa · Mastercard · American Express · PayPal · Apple Pay · Shop Pay · Google Pay · Discover ·
@@ -38,6 +38,6 @@ the list is the order shown to customers.
 - Only show methods you **actually accept** — mismatched icons erode trust.
 - Use **Inline** for a compact strip in the footer; **Grid** if you show many methods.
 - Because it can go on four surfaces, you can reinforce accepted payments in more than one place
-  (use the **Entry handle** to show the same set everywhere, or different sets per placement).
+  (the same set shows at every placement).
 
 Not showing? See [FAQ & troubleshooting](faq-troubleshooting.md).

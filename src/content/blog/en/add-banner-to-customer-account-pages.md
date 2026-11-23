@@ -65,7 +65,7 @@ A banner on an account page is read by people who already bought from you, so wr
 
 ## Show different banners on different pages
 
-You can create several banners. Place the block on each page and set its **Entry handle** to the banner you want there. Leave the handle blank to show your default (the first active banner). This is how you show a delivery notice on Order status and a promotion on Orders. See [Banner](/help/banner) and [banner placements and targeting](/help/banner-targeting) for the full list of options, including showing a banner only to certain customers or only during a schedule.
+You can create several banners. Give each banner its own **Where to show** placements, then place the block on each page. With the **Entry handle** left blank, each page shows the first active banner whose placements include it. This is how you show a delivery notice on Order status and a promotion on Orders. See [Banner](/help/banner) and [banner placements and targeting](/help/banner-targeting) for the full list of options, including showing a banner only to certain customers or only during a schedule.
 
 ## If the banner does not show
 

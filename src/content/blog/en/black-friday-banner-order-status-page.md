@@ -71,7 +71,7 @@ Shopify needs the block added to the page itself:
 
 1. Go to **Settings → Checkout** and click **Customize** next to your configuration.
 2. In the page selector, choose **Order status**.
-3. Open **Apps**, click **+** next to **Optimalify Banner**, set its **Entry handle** if you have more than one banner, and **Save**.
+3. Open **Apps**, click **+** next to **Optimalify Banner**, choose its **Where to show** placements if you have more than one banner, and **Save**.
 
 Repeat on the **Orders** page if you want the same banner there. Step-by-step help is in [adding blocks to your pages](/help/add-blocks-in-editor).
 
@@ -99,7 +99,7 @@ Banner text appears exactly as you write it. If you sell in several languages, w
 
 ### Can I run more than one banner?
 
-Yes. Create several and set each block's **Entry handle** so each page shows the banner you intend. With the Free plan you can use one block; Pro includes all blocks.
+Yes. Create several and give each its own **Where to show** placements so each page shows the banner you intend. With the Free plan you can use one block; Pro includes all blocks.
 
 ### Do I have to remove the banner after the sale?
 

@@ -16,8 +16,8 @@ editor — see [Add blocks to your pages](add-blocks-in-editor.md).
 1. **Apps → Optimalify → Blocks → Banner**.
 2. Click **Add banner** (you can create several).
 3. Fill in the fields (below), set **Status = Active**, and click **Create / Save**.
-4. Add the **Optimalify Banner** block in the customer account editor and, if you have more
-   than one banner, set its **Entry handle**.
+4. Add the **Optimalify Banner** block in the customer account editor. If you have more
+   than one banner, choose each one's **Where to show** placements.
 
 ## Fields
 
@@ -40,9 +40,9 @@ editor — see [Add blocks to your pages](add-blocks-in-editor.md).
   [Translate your blocks](translations.md).
 
 ## Show different banners on different pages
-Create multiple banners, then place the block on each page and set the **Entry handle** to the
-banner you want there. Leave the handle blank to show your default (first active) banner. See
-[the Entry handle section](add-blocks-in-editor.md#choose-which-entry-a-block-shows--the-entry-handle).
+Create multiple banners, give each one its own **Where to show** placements, then place the block
+on each page. With the **Entry handle** left blank, each page shows the first active banner whose
+placements include it. See [Banner placements & targeting](banner-targeting.md).
 
 ## Not showing up?
 Check that the banner is **Active**, the block is **added and saved** in the editor, and

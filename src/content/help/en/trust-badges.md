@@ -47,7 +47,7 @@ to delete one.
 |---|---|
 | **Badge style** | **Cards** (icon + title + description) or **Compact pills** (chips). |
 | **Layout** | **Inline row**, **Two columns**, or **Stacked**. |
-| **Alignment** | **Left** or **Center**. |
+| **Alignment** | **Left**, **Center**, or **Right**. |
 
 ## Tips
 - **Cards** style is best when you use descriptions; **Compact pills** when you want a light,

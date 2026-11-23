@@ -25,8 +25,9 @@ If you've done both, refresh the account page (changes are near-instant, but a h
 clears any cached view).
 
 ## Can I show different content on different pages?
-Yes. Create multiple entries (Banner supports several; others use one), then set each
-placement's **Entry handle** to the entry you want there. Blank = your default entry.
+For banners, yes: create several and give each its own **Where to show** placements (see
+[Banner placements & targeting](banner-targeting.md)). The other blocks use a single entry, which
+shows everywhere you place the block.
 
 ## Which pages can each block go on?
 | Block | Pages |

@@ -28,7 +28,7 @@ const ja: HomeCopy = {
     lede:
       'バナー、プロフィール情報の取得、トラストバッジ、お支払いアイコン、サポート連絡先を、お客様が日ごろから開いている顧客アカウントのページにそのまま表示できます。テーマのコード編集は不要です。',
     demo: 'デモを見る',
-    ticks: ['1つのアプリで11種類のブロック', '数分で設定完了'],
+    ticks: ['1つのアプリで13種類のブロック', '数分で設定完了'],
   },
   why: {
     eyebrow: 'なぜ今なのか',
@@ -54,7 +54,7 @@ const ja: HomeCopy = {
   },
   blocks: {
     eyebrow: 'ブロック一覧',
-    h2: '11種類のブロックを、1つのアプリで',
+    h2: '13種類のブロックを、1つのアプリで',
     lede:
       '必要なものだけを有効にできます。各ブロックはアプリで設定し、Shopifyのエディターで好きな場所に配置します。',
     more: '詳しく見る →',
@@ -79,6 +79,10 @@ const ja: HomeCopy = {
         text: '見出し、テキスト、ボタンをアカウントページに表示します。新コレクションの紹介や季節のメッセージに便利です。'},
       {icon: '🔗', name: 'ソーシャルリンク', href: '/help/social-links',
         text: 'Facebook、Instagram、X、TikTok、YouTube、Pinterest、LinkedInのプロフィール、または任意のリンクを表示します。'},
+      {icon: '🔁', name: 'もう一度購入', href: '/help/buy-again',
+        text: '注文履歴ページによく購入する商品のグリッドを表示し、注文の各商品に「この商品をもう一度購入」ボタンを付けます。'},
+      {icon: '💎', name: '会員ウォレット', href: '/help/member-wallet',
+        text: 'お客様のポイント、会員ランク、任意の会員用QRコードを、プロフィールと注文履歴ページのカードに表示します。'},
       {icon: '📄', name: 'ページ', href: '/demo',
         text: 'アカウント内に独自のページを作成し、メニュー項目として追加します。サイズガイドやお手入れガイドなどに使えます。'},
       {icon: '👀', name: '実際の表示を見る', href: '/demo',
@@ -145,9 +149,9 @@ const ja: HomeCopy = {
       {q: 'ブロックの内容を翻訳できますか？',
         a: 'はい。Optimalify内、またはShopifyのTranslate & Adaptアプリでテキストを翻訳すると、お客様がご利用中の言語で表示されます。標準の文言は、英語、日本語、ベトナム語、ドイツ語、フランス語、スペイン語、オランダ語、イタリア語に翻訳済みで提供されます。'},
       {q: 'Optimalifyは顧客データを収集しますか？',
-        a: 'プロフィールブロックは、お客様が自発的に入力した内容（誕生日や連絡の希望など）を、そのお客様自身のレコードにメタフィールドとして保存します。請求書のダウンロードは、PDFを作成するためにお客様ご自身の注文を読み取ります。その他のブロックは、設定した内容を表示するだけです。'},
+        a: 'プロフィールブロックは、お客様が自発的に入力した内容（誕生日や連絡の希望など）を、そのお客様自身のレコードにメタフィールドとして保存します。請求書のダウンロードは、PDFを作成するためにお客様ご自身の注文を読み取ります。もう一度購入は、お客様ご自身の注文履歴をブラウザー上で読み取り、会員ウォレットは、ストアが指定したお客様のメタフィールドを読み取ります。その他のブロックは、設定した内容を表示するだけです。'},
       {q: '料金はいくらですか？',
-        a: `無料プランでは${PLANS.free.blocks}ブロックをご利用いただけます。Proプランはすべての11ブロックが利用でき、月額$${PLANS.pro.monthly}または年額$${PLANS.pro.yearly}（${PLANS.pro.yearlySaving}お得）で、${PLANS.pro.trialDays}日間の無料トライアルが付きます。請求はすべて米ドル（USD）建てです。`},
+        a: `無料プランでは${PLANS.free.blocks}ブロックをご利用いただけます。Proプランはすべての13ブロックが利用でき、月額$${PLANS.pro.monthly}または年額$${PLANS.pro.yearly}（${PLANS.pro.yearlySaving}お得）で、${PLANS.pro.trialDays}日間の無料トライアルが付きます。請求はすべて米ドル（USD）建てです。`},
       {q: 'ブロックが表示されないのはなぜですか？',
         a: 'ほとんどの場合、次のどちらかが原因です。エントリーが「有効」ではなく「下書き」のままになっているか、顧客アカウントエディターでブロックが追加・保存されていないかです。その他の原因は、トラブルシューティングガイドで順に確認できます。'},
     ],
@@ -157,7 +161,7 @@ const ja: HomeCopy = {
   },
   cta: {
     h2: 'お客様が毎回開くページに、ストアからの情報を載せませんか',
-    p: `テーマのコード編集なしで11種類のブロックを利用できます。まずは無料プランから、またはProプランを${PLANS.pro.trialDays}日間無料でお試しください。`,
+    p: `テーマのコード編集なしで13種類のブロックを利用できます。まずは無料プランから、またはProプランを${PLANS.pro.trialDays}日間無料でお試しください。`,
     browse: 'ヘルプセンターを見る',
     noteBefore: '先着20ストアに該当しますか？',
     noteLink: 'ファウンディングマーチャントの特典を見る →',
@@ -172,7 +176,7 @@ const en: HomeCopy = {
     lede:
       'Banners, profile capture, trust badges, payment icons and support links — right on the account pages your shoppers already visit. No theme code.',
     demo: 'See the demo',
-    ticks: ['11 blocks, one app', 'Set up in minutes'],
+    ticks: ['13 blocks, one app', 'Set up in minutes'],
   },
   why: {
     eyebrow: 'Why now',
@@ -192,7 +196,7 @@ const en: HomeCopy = {
   },
   blocks: {
     eyebrow: 'The blocks',
-    h2: '11 blocks, all in one app',
+    h2: '13 blocks, all in one app',
     lede: 'Turn on what you need. Each block is configured in the app and placed wherever you want it in Shopify’s editor.',
     more: 'Learn more →',
     items: [
@@ -216,6 +220,10 @@ const en: HomeCopy = {
         text: 'A heading, text and a button on the account pages. Good for a new collection or a seasonal message.'},
       {icon: '🔗', name: 'Social links', href: '/help/social-links',
         text: 'Your Facebook, Instagram, X, TikTok, YouTube, Pinterest and LinkedIn profiles, or your own link.'},
+      {icon: '🔁', name: 'Buy again', href: '/help/buy-again',
+        text: 'A grid of each customer’s most-purchased products on the Orders page, plus a Buy this again button on every order line.'},
+      {icon: '💎', name: 'Member wallet', href: '/help/member-wallet',
+        text: 'A card with the customer’s points, member rank and an optional membership QR code, on the Profile and Orders pages.'},
       {icon: '📄', name: 'Pages', href: '/demo',
         text: 'Your own pages inside the account, with a menu item. Use them for a size guide or a care guide.'},
       {icon: '👀', name: 'See them live', href: '/demo',
@@ -282,9 +290,9 @@ const en: HomeCopy = {
       {q: 'Can I translate my blocks?',
         a: 'Yes. Translate your text inside Optimalify or in Shopify’s Translate & Adapt app, and customers see it in the language they shop in. Built-in wording comes translated in English, Japanese, Vietnamese, German, French, Spanish, Dutch and Italian.'},
       {q: 'Does Optimalify collect customer data?',
-        a: 'Profile stores what customers voluntarily enter (such as a birthday and contact preferences) as metafields on their own customer record. Invoice download reads the customer’s own order to build the PDF. The other blocks only display what you configure.'},
+        a: 'Profile stores what customers voluntarily enter (such as a birthday and contact preferences) as metafields on their own customer record. Invoice download reads the customer’s own order to build the PDF. Buy again reads the customer’s own order history in their browser, and Member wallet reads the customer metafields you choose. The other blocks only display what you configure.'},
       {q: 'How much does it cost?',
-        a: `Free covers ${PLANS.free.blocks} block. Pro covers all 11 blocks for $${PLANS.pro.monthly}/month, or $${PLANS.pro.yearly}/year (save ${PLANS.pro.yearlySaving}), with a ${PLANS.pro.trialDays}-day free trial. All charges are billed in USD.`},
+        a: `Free covers ${PLANS.free.blocks} block. Pro covers all 13 blocks for $${PLANS.pro.monthly}/month, or $${PLANS.pro.yearly}/year (save ${PLANS.pro.yearlySaving}), with a ${PLANS.pro.trialDays}-day free trial. All charges are billed in USD.`},
       {q: 'Why isn’t my block showing?',
         a: 'Almost always one of two things: the entry is still Draft rather than Active, or the block hasn’t been added and saved in the customer account editor. The troubleshooting guide walks through the rest.'},
     ],
@@ -294,7 +302,7 @@ const en: HomeCopy = {
   },
   cta: {
     h2: 'Put something on the page your customers already open',
-    p: `11 blocks, no theme code. Start on Free, or try Pro free for ${PLANS.pro.trialDays} days.`,
+    p: `13 blocks, no theme code. Start on Free, or try Pro free for ${PLANS.pro.trialDays} days.`,
     browse: 'Browse the Help Center',
     noteBefore: 'Among the first 20 stores? ',
     noteLink: 'See the founding merchants offer →',
