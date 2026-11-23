@@ -33,6 +33,8 @@ Two ways:
    - **Optimalify FAQ**
    - **Optimalify Store policies**
    - **Optimalify Rich Content**
+   - **Optimalify Buy Again**
+   - **Optimalify Member Wallet**
 4. Drag it to the position you want.
 5. Click **Save** in the editor.
 
@@ -49,6 +51,8 @@ Where each block can go:
 | FAQ | Order status, Orders, Profile |
 | Store policies | Order status, Orders, Profile |
 | Rich content | Order status, Orders, Profile, footer |
+| Buy again | Orders (the per-line button shows on Order status) |
+| Member wallet | Profile, Orders |
 
 ## Choose which entry a block shows — the "Entry handle"
 
