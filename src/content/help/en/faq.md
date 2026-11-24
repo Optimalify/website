@@ -1,5 +1,5 @@
 ---
-title: "FAQ block"
+title: "FAQ"
 description: "Answer common questions in an expandable list on the account pages."
 order: 11
 ---

@@ -1,5 +1,5 @@
 ---
-title: "よくある質問(FAQ)ブロック"
+title: "よくある質問"
 description: "お客様からよくある質問への回答を、アカウントページの開閉式の一覧で表示します。"
 order: 11
 ---
@@ -10,7 +10,7 @@ order: 11
 **注文状況**、**注文履歴**、**プロフィール**に表示されます。エディターで、表示したい場所に**Optimalify FAQ**ブロック（「Optimalify FAQ」ブロック）を追加してください。
 
 ## 設定方法
-1. **アプリ → Optimalify → ブロック → FAQ（Apps → Optimalify → Blocks → FAQ）**を開きます。
+1. **アプリ → Optimalify → ブロック → よくある質問（Apps → Optimalify → Blocks → FAQ）**を開きます。
 2. 質問と回答（下記参照）を追加し、**ステータス（Status）を有効（Active）**に設定して、**保存**します。
 3. 顧客アカウントのエディターで**Optimalify FAQ**ブロックを追加します。詳しくは[ページにブロックを追加する](add-blocks-in-editor.md)をご覧ください。
 

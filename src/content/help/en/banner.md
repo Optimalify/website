@@ -1,5 +1,5 @@
 ---
-title: "Banner"
+title: "Announcement banner"
 description: "Announcements on the Orders and Order status pages."
 order: 3
 ---
@@ -13,10 +13,10 @@ Orders (order index) and Order status pages. You choose which page(s) to place i
 editor — see [Add blocks to your pages](add-blocks-in-editor.md).
 
 ## Create a banner
-1. **Apps → Optimalify → Blocks → Banner**.
+1. **Apps → Optimalify → Blocks → Announcement banner**.
 2. Click **Add banner** (you can create several).
 3. Fill in the fields (below), set **Status = Active**, and click **Create / Save**.
-4. Add the **Optimalify Banner** block in the customer account editor. If you have more
+4. Add the **Optimalify Announcement banner** block in the customer account editor. If you have more
    than one banner, choose each one's **Where to show** placements.
 
 ## Fields

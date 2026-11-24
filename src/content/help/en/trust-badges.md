@@ -8,13 +8,13 @@ Reassure customers with trust badges — secure checkout, money-back guarantee, 
 and more — on the **Order status** page, right after the fulfillment details.
 
 ## Where it appears
-Order status page, after the fulfillment details section. Add the **Optimalify Badges** block
+Order status page, after the fulfillment details section. Add the **Optimalify Trust badges** block
 in the editor.
 
 ## Set it up
-1. **Apps → Optimalify → Blocks → Badges**.
+1. **Apps → Optimalify → Blocks → Trust badges**.
 2. Add a heading/message, add your badges (below), set **Status = Active**, and **Save**.
-3. Add the **Optimalify Badges** block in the customer account editor.
+3. Add the **Optimalify Trust badges** block in the customer account editor.
 
 ## Content
 - **Heading** (max 80) and **Message** (max 300) shown above the badges.

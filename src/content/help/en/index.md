@@ -5,7 +5,7 @@ order: 0
 ---
 
 Everything you need to set up and get the most out of Optimalify — the app that adds
-banners, trust badges, payment icons, support details, profile capture, and invoice
+banners, trust badges, payment icons, support details, profile fields, and invoice
 downloads to your Shopify **customer account** pages.
 
 New here? Start with **[Getting started](getting-started.md)**, then **[Add blocks to your
@@ -17,17 +17,17 @@ customer account pages](add-blocks-in-editor.md)**.
 |---|---|
 | [Getting started](getting-started.md) | What Optimalify does, where blocks appear, and your first setup |
 | [Add blocks to your pages](add-blocks-in-editor.md) | Placing Optimalify blocks in the customer account editor + the Entry handle |
-| [Banner](banner.md) | Announcements on the Orders and Order status pages |
+| [Announcement banner](banner.md) | Announcements on the Orders and Order status pages |
 | [Banner placements & targeting](banner-targeting.md) | Announcement strips, and showing banners to the right customers (tags, birthday, schedule…) |
 | [Invoice download](invoice.md) | A Download-invoice PDF action on customers' orders |
-| [Support](support.md) | Contact details, help links, and FAQs in the account footer |
+| [Support contact](support.md) | Contact details, help links, and FAQs in the account footer |
 | [Trust badges](trust-badges.md) | Secure-checkout, money-back, and shipping badges on Order status |
 | [Payment icons](payment-icons.md) | The payment methods you accept, as a row of icons |
-| [Profile capture](profile.md) | Let customers save birthday, size, and preferences |
+| [Profile fields](profile.md) | Let customers save birthday, size, and preferences |
 | [Social links](social-links.md) | Links to your social profiles and other sites |
-| [FAQ block](faq.md) | Common questions in an expandable list |
+| [FAQ](faq.md) | Common questions in an expandable list |
 | [Store policies](store-policies.md) | Returns, shipping and other policies as an expandable list |
-| [Rich content](rich-content.md) | An image, heading, text and button to promote or inform |
+| [Content section](rich-content.md) | An image, heading, text and button to promote or inform |
 | [Buy again](buy-again.md) | A most-purchased products grid and a Buy this again button on each order line |
 | [Member wallet](member-wallet.md) | A loyalty card with points, rank and a membership QR code |
 | [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
@@ -38,18 +38,18 @@ customer account pages](add-blocks-in-editor.md)**.
 
 | Block | Where it appears | Configured in |
 |---|---|---|
-| **Banner** | Orders + Order status (cards or top announcement strips) + Profile strip | Apps → Optimalify → Blocks → Banner |
-| **Invoice download** | Order action menu on Orders + Order status | Blocks → Invoice |
-| **Support** | Footer of every account page | Blocks → Support |
-| **Trust badges** | Order status, after fulfillment details | Blocks → Badges |
-| **Payment icons** | Order status, Orders, Profile, footer | Blocks → Payments |
-| **Profile capture** | Profile page (+ Orders / Order status) | Blocks → Profile |
+| **Announcement banner** | Orders + Order status (cards or top announcement strips) + Profile strip | Apps → Optimalify → Blocks → Announcement banner |
+| **Invoice download** | Order action menu on Orders + Order status | Blocks → Invoice download |
+| **Support contact** | Footer of every account page | Blocks → Support contact |
+| **Trust badges** | Order status, after fulfillment details | Blocks → Trust badges |
+| **Payment icons** | Order status, Orders, Profile, footer | Blocks → Payment icons |
+| **Profile fields** | Profile page (+ Orders / Order status) | Blocks → Profile fields |
 | **Social links** | Order status, Orders, Profile, footer | Blocks → Social links |
 | **FAQ** | Order status, Orders, Profile | Blocks → FAQ |
 | **Store policies** | Order status, Orders, Profile | Blocks → Store policies |
-| **Rich content** | Order status, Orders, Profile, footer | Blocks → Rich content |
+| **Content section** | Order status, Orders, Profile, footer | Blocks → Content section |
 | **Buy again** | Orders (grid), Order status (per line) | Blocks → Buy again |
 | **Member wallet** | Profile, Orders | Blocks → Member wallet |
-| **Pages** | Its own page in the account, opened from the account menu | Blocks → Pages |
+| **Custom pages** | Its own page in the account, opened from the account menu | Blocks → Custom pages |
 
 Need a hand? Email **mia@optimalify.org**.

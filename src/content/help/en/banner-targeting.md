@@ -10,7 +10,7 @@ status, saved profile details, birthday month, or a schedule.
 
 ## Where to show (placements)
 
-Each banner picks its placements in **Apps → Optimalify → Blocks → Banner → (edit) → Where
+Each banner picks its placements in **Apps → Optimalify → Blocks → Announcement banner → (edit) → Where
 to show**:
 
 | Placement | What it looks like |
@@ -23,7 +23,7 @@ to show**:
 
 Notes on announcement strips: they are rendered by Shopify's announcement slot, so they
 ignore the **Tone** and **dismiss** settings (the strip is always dismissible by design) and
-show the button as an inline link. Remember to add the matching **Optimalify Banner** block
+show the button as an inline link. Remember to add the matching **Optimalify Announcement banner** block
 in the customer account editor for each page — see
 [Add blocks to your pages](add-blocks-in-editor.md).
 
@@ -38,8 +38,8 @@ In the banner editor, set **Audience** to **Targeted** and add conditions:
 | **Country** | The customer is browsing from one of the listed country codes (e.g. `VN, US`). | — |
 | **Language** | The account is shown in one of the listed languages (e.g. `vi, en`). | — |
 | **B2B customer** | The logged-in customer belongs to a B2B company. | — |
-| **Profile field** | A saved Profile answer (e.g. size) equals one of your values. | Profile block |
-| **Birthday month** | The customer's saved birthday falls in the current month. | Profile block |
+| **Profile field** | A saved Profile answer (e.g. size) equals one of your values. | Profile fields block |
+| **Birthday month** | The customer's saved birthday falls in the current month. | Profile fields block |
 | **Schedule** | Now is between your From/Until datetimes (UTC). | — |
 
 Combine conditions with **all** (every condition must match) or **any** (at least one).
@@ -60,7 +60,7 @@ or a condition that needs a permission you haven't granted. Choose what happens 
 ## Examples
 
 - **Birthday offer:** Audience = Targeted · condition **Birthday month** · a warm heading
-  and a discount-code button. Pair it with the Profile block so customers save birthdays.
+  and a discount-code button. Pair it with the Profile fields block so customers save birthdays.
 - **VIP-only notice:** condition **Customer tag** = `VIP` (needs the extra permission).
 - **Campaign window:** condition **Schedule** with From/Until — the banner turns itself on
   and off.

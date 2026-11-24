@@ -1,5 +1,5 @@
 ---
-title: "Support"
+title: "Support contact"
 description: "Contact details, help links, and FAQs in the account footer."
 order: 6
 ---
@@ -10,12 +10,12 @@ link, all in one tidy block.
 
 ## Where it appears
 The footer of every account page (Orders, Order status, Profile). Add the **Optimalify
-Support** block once in the editor and it shows across the account area.
+Support contact** block once in the editor and it shows across the account area.
 
 ## Set it up
-1. **Apps → Optimalify → Blocks → Support**.
+1. **Apps → Optimalify → Blocks → Support contact**.
 2. Fill in the fields (below) and set **Status = Active**.
-3. **Save**, then add the **Optimalify Support** block in the customer account editor.
+3. **Save**, then add the **Optimalify Support contact** block in the customer account editor.
 
 ## Fields
 
@@ -36,9 +36,9 @@ Leave any channel blank to hide it — only the fields you fill in appear.
 ## Tips
 - Use **Inline row** for a light single-line footer; **Stacked list** or **Two columns** when you show several channels.
 - The **Help center URL** is a great place to link *this* help center or your own FAQ.
-- Only one Support entry is used at a time; leave the block's **Entry handle** blank.
+- Only one Support contact entry is used at a time; leave the block's **Entry handle** blank.
 
 ## Privacy
-The Support block shows only the contact details you enter — it reads no customer data.
+The Support contact block shows only the contact details you enter — it reads no customer data.
 
 Not showing? See [FAQ & troubleshooting](faq-troubleshooting.md).

@@ -1,5 +1,5 @@
 ---
-title: "Profile capture"
+title: "Profile fields"
 description: "Let customers save birthday, size, and communication preferences."
 order: 9
 ---
@@ -10,7 +10,7 @@ perfect for birthday offers, better size recommendations, and respectful marketi
 
 ## Where it appears
 The **Profile** page (and optionally **Orders** and **Order status**). Add the **Optimalify
-Profile** block in the customer account editor.
+Profile fields** block in the customer account editor.
 
 ## How it works
 You choose **which fields to ask for** and the wording in Optimalify; your **customers fill in
@@ -18,9 +18,9 @@ the values** on their account page. Configure in the app, then place the block i
 the same two steps as the other blocks.
 
 ## Set it up
-1. **Apps → Optimalify → Blocks → Profile**.
+1. **Apps → Optimalify → Blocks → Profile fields**.
 2. Set the options below, set **Status = Active**, and **Save**.
-3. Add the **Optimalify Profile** block in the customer account editor.
+3. Add the **Optimalify Profile fields** block in the customer account editor.
 
 ## Options
 

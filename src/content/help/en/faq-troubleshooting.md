@@ -32,15 +32,15 @@ shows everywhere you place the block.
 ## Which pages can each block go on?
 | Block | Pages |
 |---|---|
-| Banner | Orders, Order status |
-| Support | Footer (all account pages) |
+| Announcement banner | Orders, Order status |
+| Support contact | Footer (all account pages) |
 | Trust badges | Order status (after fulfillment details) |
 | Payment icons | Order status, Orders, Profile, footer |
-| Profile capture | Profile, Orders, Order status |
+| Profile fields | Profile, Orders, Order status |
 | Social links | Order status, Orders, Profile, footer |
 | FAQ | Order status, Orders, Profile |
 | Store policies | Order status, Orders, Profile |
-| Rich content | Order status, Orders, Profile, footer |
+| Content section | Order status, Orders, Profile, footer |
 
 ## Can I translate the text of my blocks?
 Yes. Translate it under **Translations** in Optimalify or in Translate & Adapt; customers see
@@ -52,9 +52,9 @@ Upload one from your computer or pick an image already in your store's **Files**
 (Settings → Files) — uploads are stored in Files too. A logo replaces the badge's icon.
 
 ## Does Optimalify collect customer data?
-- **Banner, Support, Trust badges, Payment icons:** no customer data — they only show the
+- **Announcement banner, Support contact, Trust badges, Payment icons:** no customer data — they only show the
   content you configure.
-- **Profile capture:** stores the details customers voluntarily enter (birthday, size,
+- **Profile fields:** stores the details customers voluntarily enter (birthday, size,
   communication preferences) as metafields on their customer record, visible to you in admin.
   Use it in line with your privacy policy.
 

@@ -76,7 +76,7 @@ One more nuance: Shopify's guide for changing where customers land after sign-in
 3. Tidy the account menu to the three or four links customers actually use.
 4. Decide what content your account pages are missing, and add it with blocks.
 
-For step 4, the usual gaps are an announcement, contact details, reassurance and a reason to come back. A block app such as Optimalify covers those with [banners](/help/banner), [support links](/help/support), [trust badges](/help/trust-badges), [payment icons](/help/payment-icons) and a [profile block](/help/profile) for customer details. Our [guide to adding blocks in the editor](/help/add-blocks-in-editor) shows every spot a block can go.
+For step 4, the usual gaps are an announcement, contact details, reassurance and a reason to come back. A block app such as Optimalify covers those with [announcement banners](/help/banner), [support contact](/help/support), [trust badges](/help/trust-badges), [payment icons](/help/payment-icons) and a [profile block](/help/profile) for customer details. Our [guide to adding blocks in the editor](/help/add-blocks-in-editor) shows every spot a block can go.
 
 ## FAQ
 

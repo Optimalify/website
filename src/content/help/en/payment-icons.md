@@ -9,12 +9,12 @@ customer account pages.
 
 ## Where it appears
 Flexible: **Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify
-Payment Icons** block wherever you want it in the editor.
+Payment icons** block wherever you want it in the editor.
 
 ## Set it up
-1. **Apps → Optimalify → Blocks → Payments**.
+1. **Apps → Optimalify → Blocks → Payment icons**.
 2. Add a heading, choose your payment methods (below), set **Status = Active**, and **Save**.
-3. Add the **Optimalify Payment Icons** block in the customer account editor.
+3. Add the **Optimalify Payment icons** block in the customer account editor.
 
 ## Fields
 

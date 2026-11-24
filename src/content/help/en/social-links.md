@@ -8,13 +8,12 @@ Send customers to your social profiles — Facebook, Instagram, X, TikTok, YouTu
 LinkedIn, or any other site — from their customer account pages.
 
 ## Where it appears
-**Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify Social
-Links** block wherever you want it in the editor.
+**Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify Social links** block wherever you want it in the editor.
 
 ## Set it up
 1. **Apps → Optimalify → Blocks → Social links**.
 2. Add your links (below), set **Status = Active**, and **Save**.
-3. Add the **Optimalify Social Links** block in the customer account editor — see
+3. Add the **Optimalify Social links** block in the customer account editor — see
    [Add blocks to your pages](add-blocks-in-editor.md).
 
 ## Fields
