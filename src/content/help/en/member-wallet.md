@@ -9,7 +9,7 @@ balance**, their **member rank**, and an optional **QR code** that staff can sca
 shop.
 
 ## Where it appears
-The **Profile** and **Orders** pages. Add the **Optimalify Member Wallet** block wherever you
+The **Profile** and **Orders** pages. Add the **Optimalify Member wallet** block wherever you
 want it in the editor.
 
 ## Where the values come from
@@ -27,7 +27,7 @@ Metafields owned by another app (the `$app` namespace) can't be read. Store cred
 1. **Apps → Optimalify → Blocks → Member wallet**.
 2. Fill in the card (below), set **Status = Active**, and **Save**. The page warns you if a
    metafield is missing or isn't readable by customers.
-3. Add the **Optimalify Member Wallet** block in the customer account editor — see
+3. Add the **Optimalify Member wallet** block in the customer account editor — see
    [Add blocks to your pages](add-blocks-in-editor.md).
 
 ## Settings

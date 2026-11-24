@@ -32,10 +32,10 @@ export const ui: Record<Locale, Ui> = {
   ja: {
     tagline: '顧客がログインする場所で、お客様に出会う',
     siteDescription:
-      'Optimalifyは、バナー、プロフィール情報の取得、トラストバッジ、お支払いアイコン、サポート連絡先を、' +
+      'Optimalifyは、お知らせバナー、プロフィール項目、信頼バッジ、決済アイコン、お問い合わせ先を、' +
       'Shopifyの顧客アカウントページに追加するアプリです。テーマのコード編集は不要です。',
     footNote:
-      'Shopifyの新しい顧客アカウント向けのブロック。バナー、プロフィール情報の取得、トラストバッジ、お支払いアイコン、サポート連絡先などを追加できます。',
+      'Shopifyの新しい顧客アカウント向けのブロック。お知らせバナー、プロフィール項目、信頼バッジ、決済アイコン、お問い合わせ先などを追加できます。',
     install: 'Shopifyに追加',
     nav: {features: '機能', how: '使い方', demo: 'デモ', blog: 'ブログ', help: 'ヘルプセンター'},
     homeLabel: 'Optimalify ホーム',
@@ -82,10 +82,10 @@ export const ui: Record<Locale, Ui> = {
   en: {
     tagline: 'Meet customers where they sign in',
     siteDescription:
-      'Optimalify adds banners, profile capture, trust badges, payment icons and support ' +
-      'links to your Shopify customer account pages — no theme code.',
+      'Optimalify adds announcement banners, profile fields, trust badges, payment icons and support ' +
+      'contact links to your Shopify customer account pages — no theme code.',
     footNote:
-      'Blocks for Shopify’s new customer accounts — banners, profile capture, trust badges, payment icons and support links.',
+      'Blocks for Shopify’s new customer accounts — announcement banners, profile fields, trust badges, payment icons and support contact.',
     install: 'Add to Shopify',
     nav: {features: 'Features', how: 'How it works', demo: 'Demo', blog: 'Blog', help: 'Help Center'},
     homeLabel: 'Optimalify home',

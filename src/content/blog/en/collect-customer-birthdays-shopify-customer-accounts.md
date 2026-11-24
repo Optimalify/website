@@ -24,7 +24,7 @@ You do not need to write any of that yourself. A block app does it for you.
 
 ## Step 1: Configure the Profile block
 
-1. In your Shopify admin, open **Apps → Optimalify → Blocks → Profile**.
+1. In your Shopify admin, open **Apps → Optimalify → Blocks → Profile fields**.
 2. Under **Fields to collect**, turn on **Birthday**. Turn on **Contact preferences** too if you want customers to pick what they hear about. At least one field must be on, or the block will not show.
 3. Write a **heading** and **subheading** that say why you are asking, for example "Your birthday" and "Tell us and we'll send you a treat." If you leave them blank, Optimalify uses friendly built-in wording that is translated for each customer's language.
 4. If you enabled contact preferences, add your own options, such as "New arrivals", "Restock alerts" or "Weekly digest".
@@ -38,7 +38,7 @@ As with every customer account block, saving in the app is half the job. Shopify
 
 1. Go to **Settings → Checkout** and click **Customize** next to your configuration.
 2. Choose the **Profile** page in the page selector.
-3. Open the **Apps** sidebar, click **+** next to the **Optimalify Profile** block, position it, and **Save**.
+3. Open the **Apps** sidebar, click **+** next to the **Optimalify Profile fields** block, position it, and **Save**.
 
 See [adding blocks to your pages](/help/add-blocks-in-editor) for the details. Remember the block only shows to **signed-in** customers, so test while signed in to a customer account.
 
@@ -52,7 +52,7 @@ Whether your email or automation tool can read those metafields depends on the t
 
 The simplest use needs no extra tool. Optimalify banners can be **targeted**, and one of the conditions is **Birthday month**, which matches customers whose saved birthday falls in the current month. A birthday banner looks like this:
 
-1. In **Apps → Optimalify → Blocks → Banner**, create a banner with a warm heading ("Happy birthday month!") and a button.
+1. In **Apps → Optimalify → Blocks → Announcement banner**, create a banner with a warm heading ("Happy birthday month!") and a button.
 2. Set **Audience** to **Targeted** and add the **Birthday month** condition. The [targeting guide](/help/banner-targeting) lists the other conditions.
 3. Point the button at a discount. Shopify lets you copy a **shareable discount link** from a saved discount code; it applies the discount automatically to the customer's next checkout cart, and you can add a redirect such as `/discount/CODE?redirect=/collections/gifts` to send them to a specific page.
 4. Add the Banner block to the Orders page so it greets customers when they open their account.

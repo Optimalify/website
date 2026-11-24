@@ -24,17 +24,17 @@ Two ways:
 1. In the editor, pick the page where you want the block (for example **Order status**).
 2. Click **Add block** (or **Add app block**) in the section where it should appear.
 3. Choose the Optimalify block from the list:
-   - **Optimalify Banner**
-   - **Optimalify Support**
-   - **Optimalify Badges** (trust badges)
-   - **Optimalify Payment Icons**
-   - **Optimalify Profile**
-   - **Optimalify Social Links**
+   - **Optimalify Announcement banner**
+   - **Optimalify Support contact**
+   - **Optimalify Trust badges**
+   - **Optimalify Payment icons**
+   - **Optimalify Profile fields**
+   - **Optimalify Social links**
    - **Optimalify FAQ**
    - **Optimalify Store policies**
-   - **Optimalify Rich Content**
-   - **Optimalify Buy Again**
-   - **Optimalify Member Wallet**
+   - **Optimalify Content section**
+   - **Optimalify Buy again**
+   - **Optimalify Member wallet**
 4. Drag it to the position you want.
 5. Click **Save** in the editor.
 
@@ -42,25 +42,25 @@ Where each block can go:
 
 | Block | Available pages |
 |---|---|
-| Banner | Orders, Order status |
-| Support | Footer (all account pages) |
+| Announcement banner | Orders, Order status |
+| Support contact | Footer (all account pages) |
 | Trust badges | Order status (after fulfillment details) |
 | Payment icons | Order status, Orders, Profile, footer |
-| Profile capture | Profile, Orders, Order status |
+| Profile fields | Profile, Orders, Order status |
 | Social links | Order status, Orders, Profile, footer |
 | FAQ | Order status, Orders, Profile |
 | Store policies | Order status, Orders, Profile |
-| Rich content | Order status, Orders, Profile, footer |
+| Content section | Order status, Orders, Profile, footer |
 | Buy again | Orders (the per-line button shows on Order status) |
 | Member wallet | Profile, Orders |
 
 ## Choose which entry a block shows — the "Entry handle"
 
-Only **Banner** (and **Pages**, which are full pages) let you create **more than one entry** in
-Optimalify, for example two different banners. Support, Trust badges, Payment icons, Social
-links, FAQ, Store policies and Rich content each edit a single entry.
+Only **Announcement banner** (and **Custom pages**, which are full pages) let you create **more than one entry** in
+Optimalify, for example two different banners. Support contact, Trust badges, Payment icons, Social
+links, FAQ, Store policies and Content section each edit a single entry.
 
-Banner, Support, Trust badges, Payment icons, Social links, FAQ, Store policies and Rich content
+Announcement banner, Support contact, Trust badges, Payment icons, Social links, FAQ, Store policies and Content section
 have one setting in the editor, **Entry handle** — the handle of the entry you want that
 placement to show. **Leave it blank** to show your shop **default** (the first active
 entry). Optimalify doesn't display entry handles in the app, so you usually won't need it. To show

@@ -10,7 +10,7 @@ repeat purchases — tea, cosmetics, pet food, refills.
 
 ## Where it appears
 - **Orders** page: a grid of the customer's most-purchased products, each with a **Buy again**
-  button. Add the **Optimalify Buy Again** block where you want the grid in the editor.
+  button. Add the **Optimalify Buy again** block where you want the grid in the editor.
 - **Order status** page: a **Buy this again** button on each order line.
 
 Customers with no past orders see nothing.
@@ -18,7 +18,7 @@ Customers with no past orders see nothing.
 ## Set it up
 1. **Apps → Optimalify → Blocks → Buy again**.
 2. Adjust the settings (below), set **Status = Active**, and **Save**.
-3. Add the **Optimalify Buy Again** block to the Orders page in the customer account editor — see
+3. Add the **Optimalify Buy again** block to the Orders page in the customer account editor — see
    [Add blocks to your pages](add-blocks-in-editor.md).
 
 ## Settings

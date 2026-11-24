@@ -12,9 +12,9 @@ Open **Apps → Optimalify → Dashboard** and pick one:
 
 | Pack | Adds |
 |---|---|
-| **Fewer support tickets** | [FAQ](faq.md) + [Support](support.md) + [Social links](social-links.md) |
-| **EU & B2B ready** | [Invoice download](invoice.md) + [Profile](profile.md) (Company name and VAT number fields) + a [banner](banner.md) for business buyers |
-| **Promote & retain** | [Rich content](rich-content.md) + [Banner](banner.md) + [Trust badges](trust-badges.md) |
+| **Fewer support tickets** | [FAQ](faq.md) + [Support contact](support.md) + [Social links](social-links.md) |
+| **EU & B2B ready** | [Invoice download](invoice.md) + [Profile fields](profile.md) (Company name and VAT number fields) + an [announcement banner](banner.md) for business buyers |
+| **Promote & retain** | [Content section](rich-content.md) + [Announcement banner](banner.md) + [Trust badges](trust-badges.md) |
 
 ## What happens when you click
 1. The pack adds its blocks, filled in with starter text.
@@ -30,7 +30,7 @@ Some blocks don't show until you add details:
 
 - **Social links** — add your links.
 - **Invoice** — add your business address and tax ID.
-- **Support** — add a support email, if your store has none.
+- **Support contact** — add a support email, if your store has none.
 
 Edit the starter text of any block to match your brand, then **Save**.
 

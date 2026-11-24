@@ -52,7 +52,7 @@ Customer accounts are extended with apps, placed in the checkout and accounts ed
 This is where a no-code block app earns its keep. For the content most stores recreate first:
 
 - A sale or shipping notice: [Banner](/help/banner)
-- Your contact channels: [Support links](/help/support)
+- Your contact channels: [Support contact](/help/support)
 - Reassurance on the order tracking page: [Trust badges](/help/trust-badges)
 - Accepted payment methods: [Payment icons](/help/payment-icons)
 - Birthday or preference capture: [Profile](/help/profile)
@@ -114,4 +114,4 @@ Checked against Shopify's documentation on October 1, 2026:
 
 ## Rebuild your customer account content in minutes
 
-Optimalify adds a banner, profile capture, trust badges, payment icons and support links to the new customer account pages, with no theme code. The Free plan covers one block, so you can recreate the one thing your customers miss most and decide from there. [Add Optimalify from the Shopify App Store](install:listing), or start with the [getting started guide](/help/getting-started).
+Optimalify adds an announcement banner, profile fields, trust badges, payment icons and a support contact block to the new customer account pages, with no theme code. The Free plan covers one block, so you can recreate the one thing your customers miss most and decide from there. [Add Optimalify from the Shopify App Store](install:listing), or start with the [getting started guide](/help/getting-started).

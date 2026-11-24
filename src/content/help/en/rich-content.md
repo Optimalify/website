@@ -1,5 +1,5 @@
 ---
-title: "Rich content"
+title: "Content section"
 description: "An image, heading, text and button to promote or inform."
 order: 13
 ---
@@ -8,13 +8,12 @@ Add a promo card, a story, or a campaign to the account pages: an image, a headi
 text, and an optional button.
 
 ## Where it appears
-**Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify Rich
-Content** block where you want it in the editor.
+**Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify Content section** block where you want it in the editor.
 
 ## Set it up
-1. **Apps → Optimalify → Blocks → Rich content**.
+1. **Apps → Optimalify → Blocks → Content section**.
 2. Fill in the fields (below), set **Status = Active**, and **Save**.
-3. Add the **Optimalify Rich Content** block in the customer account editor — see
+3. Add the **Optimalify Content section** block in the customer account editor — see
    [Add blocks to your pages](add-blocks-in-editor.md).
 
 ## Fields
@@ -30,7 +29,7 @@ Content** block where you want it in the editor.
 On narrow screens, **Image left** and **Image right** stack to **Image on top**.
 
 ## Tips
-- Pair it with a [banner](banner.md) for launches: the banner announces, the card tells the story.
+- Pair it with an [announcement banner](banner.md) for launches: the banner announces, the card tells the story.
 - Use **Text only** for a simple announcement with a button.
 - Make the button label an action, like "Shop the sale".
 

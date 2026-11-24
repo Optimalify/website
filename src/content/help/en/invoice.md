@@ -10,7 +10,7 @@ the order's action menu on the **Orders** and **Order status** pages.
 
 ## Set it up
 
-1. **Apps → Optimalify → Blocks → Invoice**.
+1. **Apps → Optimalify → Blocks → Invoice download**.
 2. Fill in your seller details (below) and set **Status = Active**, then **Save**.
 3. That's it — the action appears automatically on customers' orders. (No editor block to
    place: order actions are added by the app, not the editor.)

@@ -11,23 +11,23 @@ editor.
 
 ## What you can add
 
-- **Banner** — announcements (sales, shipping notices, policy updates) on the Orders and
+- **Announcement banner** — announcements (sales, shipping notices, policy updates) on the Orders and
   Order status pages.
-- **Support** — your contact channels (email, phone, WhatsApp, help center, "report a
+- **Support contact** — your contact channels (email, phone, WhatsApp, help center, "report a
   problem") in the footer of every account page.
 - **Trust badges** — secure-checkout, money-back, fast-shipping and custom badges on the
   Order status page.
 - **Payment icons** — the payment methods you accept, shown as a tidy row of icons.
-- **Profile capture** — let logged-in customers save their birthday, preferred size, and
+- **Profile fields** — let logged-in customers save their birthday, preferred size, and
   communication preferences (zero-party data you can use for marketing).
 - **Invoice download** — a Download invoice PDF action on customers' orders.
-- **Social links**, **FAQ**, **Store policies** and **Rich content** — links to your profiles,
+- **Social links**, **FAQ**, **Store policies** and **Content section** — links to your profiles,
   expandable Q&A and policy lists, and an image-and-text promo card.
 - **Buy again** — a grid of the products a customer buys most, plus a Buy this again button on
   each order line.
 - **Member wallet** — a loyalty card with the customer's points, member rank and a membership
   QR code.
-- **Pages** — your own pages inside the account, opened from the account menu.
+- **Custom pages** — your own pages inside the account, opened from the account menu.
 
 Short on time? **[Starter packs](starter-packs.md)** on the Dashboard add a goal's worth of
 blocks in one click.
@@ -41,7 +41,7 @@ blocks in one click.
    Optimalify block where you want it. See
    **[Add blocks to your pages](add-blocks-in-editor.md)**.
 
-That's the whole model: **configure in the app → place in the editor.** Some blocks (Support,
+That's the whole model: **configure in the app → place in the editor.** Some blocks (Support contact,
 Trust badges) sit in a fixed spot and only need step 1 plus turning the block on in the editor;
 Invoice download needs no editor step at all.
 

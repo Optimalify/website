@@ -27,7 +27,7 @@ Black Friday is the day after US Thanksgiving, which is the fourth Thursday of N
 
 ## Step 1: Write the banner
 
-In **Apps → Optimalify → Blocks → Banner**, click **Add banner** and fill in:
+In **Apps → Optimalify → Blocks → Announcement banner**, click **Add banner** and fill in:
 
 - **Internal name:** "Black Friday 2026".
 - **Heading** (up to 80 characters) and **Message** (up to 300).
@@ -71,7 +71,7 @@ Shopify needs the block added to the page itself:
 
 1. Go to **Settings → Checkout** and click **Customize** next to your configuration.
 2. In the page selector, choose **Order status**.
-3. Open **Apps**, click **+** next to **Optimalify Banner**, choose its **Where to show** placements if you have more than one banner, and **Save**.
+3. Open **Apps**, click **+** next to **Optimalify Announcement banner**, choose its **Where to show** placements if you have more than one banner, and **Save**.
 
 Repeat on the **Orders** page if you want the same banner there. Step-by-step help is in [adding blocks to your pages](/help/add-blocks-in-editor).
 

@@ -26,7 +26,7 @@ Shopify's own documentation lists announcement-style use cases such as time-sens
 
 ## Step 1: Create the banner in the app
 
-1. In your Shopify admin, open **Apps → Optimalify → Blocks → Banner**.
+1. In your Shopify admin, open **Apps → Optimalify → Blocks → Announcement banner**.
 2. Click **Add banner**.
 3. Fill in the fields:
    - **Internal name:** only you see it, for example "Free shipping June".
@@ -44,7 +44,7 @@ Creating the banner does not show it yet. Shopify requires you to add the block 
 
 1. Go to **Settings → Checkout** and click **Customize** next to your configuration.
 2. In the page selector at the top, choose **Orders** or **Order status**.
-3. Open the **Apps** sidebar and click **+** next to the **Optimalify Banner** block. Shopify's guide notes that if an app offers its block for Orders, Order status, Profile or Accounts, it works with customer accounts.
+3. Open the **Apps** sidebar and click **+** next to the **Optimalify Announcement banner** block. Shopify's guide notes that if an app offers its block for Orders, Order status, Profile or Accounts, it works with customer accounts.
 4. Move the block to where you want it on the page, then click **Save**.
 
 Repeat for the other page if you want the banner on both. Our [guide to adding blocks in the editor](/help/add-blocks-in-editor) has screenshots of each spot.
