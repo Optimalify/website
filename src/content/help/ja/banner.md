@@ -13,7 +13,7 @@ order: 3
 1. **アプリ → Optimalify → ブロック → お知らせバナー（Apps → Optimalify → Blocks → Announcement banner）**を開きます。
 2. **バナーを追加（Add banner）**をクリックします（複数作成できます）。
 3. 下記の項目を入力し、**ステータス（Status）を有効（Active）**に設定して、**作成 / 保存（Create / Save）**をクリックします。
-4. 顧客アカウントのエディターで**Optimalify お知らせバナー** ブロックを追加します。バナーが複数ある場合は、それぞれの**表示場所（Where to show）**を選んでください。
+4. 顧客アカウントのエディターで**Optimalify Announcement banner**（お知らせバナー） ブロックを追加します。バナーが複数ある場合は、それぞれの**表示場所（Where to show）**を選んでください。
 
 ## 項目
 

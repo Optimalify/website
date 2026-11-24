@@ -7,12 +7,12 @@ order: 10
 お客様のアカウントページから、Facebook、Instagram、X、TikTok、YouTube、Pinterest、LinkedIn、またはその他のサイトにある、ストアのプロフィールへご案内できます。
 
 ## 表示される場所
-**注文状況**ページ、**注文履歴**ページ、**プロフィール**ページ、**フッター**。エディターで表示したい場所に**Optimalify SNSリンク** ブロックを追加します。
+**注文状況**ページ、**注文履歴**ページ、**プロフィール**ページ、**フッター**。エディターで表示したい場所に**Optimalify Social links**（SNSリンク） ブロックを追加します。
 
 ## 設定手順
 1. **アプリ → Optimalify → ブロック → SNSリンク（Apps → Optimalify → Blocks → Social links）**を開きます。
 2. 下記のリンクを追加し、**ステータス（Status）を「有効（Active）」**にして**保存（Save）**します。
-3. チェックアウトと顧客アカウントのエディターで **Optimalify SNSリンク** ブロックを追加します。詳しくは[ページにブロックを追加する](add-blocks-in-editor.md)をご覧ください。
+3. チェックアウトと顧客アカウントのエディターで **Optimalify Social links**（SNSリンク） ブロックを追加します。詳しくは[ページにブロックを追加する](add-blocks-in-editor.md)をご覧ください。
 
 ## 項目
 

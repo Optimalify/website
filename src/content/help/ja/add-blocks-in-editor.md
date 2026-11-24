@@ -18,17 +18,17 @@ Optimalifyでブロックを設定したら、Shopifyの**チェックアウト�
 1. エディターで、ブロックを配置したいページ（例：**注文状況**）を選びます。
 2. ブロックを表示したいセクションで、**ブロックを追加（Add block）**（または**アプリブロックを追加（Add app block）**）をクリックします。
 3. 一覧からOptimalifyのブロックを選びます。
-   - **Optimalify お知らせバナー**
-   - **Optimalify お問い合わせ先**
-   - **Optimalify 信頼バッジ**
-   - **Optimalify 決済アイコン**
-   - **Optimalify プロフィール項目**
-   - **Optimalify SNSリンク**
-   - **Optimalify よくある質問**
-   - **Optimalify ストアポリシー**
-   - **Optimalify コンテンツセクション**
-   - **Optimalify もう一度購入**
-   - **Optimalify 会員ウォレット**
+   - **Optimalify Announcement banner**（お知らせバナー）
+   - **Optimalify Support contact**（お問い合わせ先）
+   - **Optimalify Trust badges**（信頼バッジ）
+   - **Optimalify Payment icons**（決済アイコン）
+   - **Optimalify Profile fields**（プロフィール項目）
+   - **Optimalify Social links**（SNSリンク）
+   - **Optimalify FAQ**（よくある質問）
+   - **Optimalify Store policies**（ストアポリシー）
+   - **Optimalify Content section**（コンテンツセクション）
+   - **Optimalify Buy again**（もう一度購入）
+   - **Optimalify Member wallet**（会員ウォレット）
 4. ドラッグして、希望の位置に移動します。
 5. エディターで**保存**をクリックします。
 
