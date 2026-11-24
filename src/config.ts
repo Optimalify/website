@@ -5,8 +5,8 @@ export const SITE = {
   url: 'https://optimalify.org',
   tagline: 'Meet customers where they sign in',
   description:
-    'Optimalify adds banners, profile capture, trust badges, payment icons and support ' +
-    "links to your Shopify customer account pages — no theme code.",
+    'Optimalify adds announcement banners, profile fields, trust badges, payment icons and support ' +
+    "contact links to your Shopify customer account pages — no theme code.",
   supportEmail: 'mia@optimalify.org',
   // The live Shopify App Store listing. The ONLY place this URL is written —
   // every install link on the site goes through `listingUrl()` below.
@@ -41,8 +41,8 @@ export function foundingMailtoFor(locale: 'ja' | 'en'): string {
   const subject = locale === 'ja' ? 'Founding merchant（ファウンディングマーチャント参加希望）' : 'Founding merchant';
   const body =
     locale === 'ja'
-      ? ['ストアのURL: ', '最初に使いたいブロック（バナー、プロフィール、トラストバッジ、お支払いアイコン、サポート連絡先など）: ', '']
-      : ['Store URL: ', 'What I would use first (Banner, Profile, Trust badges, Payment icons, Support links): ', ''];
+      ? ['ストアのURL: ', '最初に使いたいブロック（お知らせバナー、プロフィール項目、信頼バッジ、決済アイコン、お問い合わせ先など）: ', '']
+      : ['Store URL: ', 'What I would use first (Announcement banner, Profile fields, Trust badges, Payment icons, Support contact): ', ''];
   return `mailto:${SITE.supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join('\n'))}`;
 }
 export const foundingMailto = foundingMailtoFor('en');
