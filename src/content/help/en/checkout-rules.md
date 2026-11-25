@@ -30,7 +30,8 @@ The quickest start is a template. Go to **Apps → Optimalify → Checkout rules
 - Max per cart line
 - Cart size limits
 
-Templates start **Active**. Review the rule, then press **Save rule**. If you'd rather try it first,
+Templates start **Active**. **Engraving or custom text required** starts on **Specific products**: pick the
+products it covers (or switch to **All products**) before you save. Review the rule, then press **Save rule**. If you'd rather try it first,
 set its status to **Testing** (see below). On the **Free** plan, if another block or rule is already
 active, Optimalify asks which one stays active.
 
@@ -73,6 +74,9 @@ another app) must provide that field — **Optimalify doesn't add it to the prod
 property name in your rule must match the field name exactly.
 
 ## Draft, Testing and Active
+Each rule shows its state as a badge. To change it, open the rule's **⋮** menu and choose **Set to Active**,
+**Set to Testing** or **Set to Draft** (the state it already has isn't listed).
+
 
 | Status | What it does |
 |---|---|
@@ -82,10 +86,10 @@ property name in your rule must match the field name exactly.
 
 ## Test it
 - Use the **simulator** on the rule page to try sample carts and see which rules block them.
-- Set the rule to **Testing**, then click **Open test checkout**. It opens your store with a sample
-  product in the cart, marked as a test, so rules in **Testing** apply too.
-- If a rule blocks the product as it is added to the cart, Shopify shows its own "Something went
-  wrong" page — your message is under **What happened?**.
+- Set the rule to **Testing**, then click **Open test checkout**. It opens checkout with only the sample
+  product, marked as a test, so rules in **Testing** apply too. Your own cart in that browser is
+  replaced, not added to.
+- If a rule blocks it, Shopify shows your message in checkout, or on its own error page (which may repeat it).
 - When it behaves as you expect, switch the rule to **Active**.
 
 ## Is it live? "Live in checkout"
