@@ -18,20 +18,21 @@ Two kinds of rule are supported:
   **manage checkout rules**. When Shopify shows it, accept **Update permissions**. Until you do,
   rules are saved but can't block checkout.
 - It works on every Shopify plan.
-- The **Free** plan runs **one active block** at a time — each **Active** rule counts as one
-  active block. **Pro** has unlimited active rules. Paused rules don't count.
+- The **Free** plan runs **one active entry** at a time: one block **or** one checkout rule. Only
+  **Active** rules count; **Testing** and **Draft** rules don't. **Pro** has unlimited active rules.
 
 ## Start from a template
 The quickest start is a template. Go to **Apps → Optimalify → Checkout rules** and pick one:
-- Engraving required
-- Gift message max length
-- Wholesale minimum of 6
-- Sold in sets of 6
-- Max 2 per order
-- Cart minimum / maximum items
+- Engraving or custom text required
+- Gift message length
+- Wholesale minimum
+- Sold in sets
+- Max per cart line
+- Cart size limits
 
-Templates are created **Paused**, so nothing changes in your checkout until you review the rule
-and set it to **Active**.
+Templates start **Active**. Review the rule, then press **Save rule**. If you'd rather try it first,
+set its status to **Testing** (see below). On the **Free** plan, if another block or rule is already
+active, Optimalify asks which one stays active.
 
 ## Build a rule step by step
 Rules are written as a sentence:
@@ -50,14 +51,17 @@ Rules are written as a sentence:
      | **matches a pattern** | Pick a preset: **letters and numbers only**, **numbers only**, **email address**, **max N characters** — or write an **advanced custom pattern** |
 
    - **Quantity** — **minimum**, **maximum** or **multiple of**, applied to **each matching line**
-     or the **total of all matching lines**.
+     or the **total of all matching lines**. With **each matching line**, every cart line is checked
+     on its own — two variants of one product are two lines.
 3. **Show this message** — the text the customer sees when the rule blocks checkout.
-4. Set **Status** to **Active** and **Save**.
+4. Choose a **Status** — **Draft**, **Testing** or **Active** — and press **Save rule**. Saving
+   updates your checkout straight away.
 
 ### Messages
 Write the message in **English** and **Japanese**. You can use these variables, which are replaced
 with the real values: `{product}`, `{min}`, `{max}`, `{multiple}` and `{property}`.
-For example: `Please enter {property} for {product}.`
+For example: `Please enter {property} for {product}.` A variable that doesn't exist, such as
+`{qty}`, is flagged and the rule can't be saved until you fix it.
 
 The customer sees the message in their checkout language when you wrote one for it; otherwise
 they see the English message.
@@ -68,29 +72,47 @@ sent by a field in your product page form named like `properties[Engraving]`. Yo
 another app) must provide that field — **Optimalify doesn't add it to the product page**. The
 property name in your rule must match the field name exactly.
 
+## Draft, Testing and Active
+
+| Status | What it does |
+|---|---|
+| **Draft** | Saved, but checks nothing. Use it to keep a rule without running it. |
+| **Testing** | Blocks **test checkouts only** — real customers aren't affected. Doesn't use the Free plan's active slot. |
+| **Active** | Blocks every checkout that breaks the rule. |
+
 ## Test it
 - Use the **simulator** on the rule page to try sample carts and see which rules block them.
-- Click **Open test checkout** to try the rule in your real checkout.
-
-## Active and Paused
-An **Active** rule is enforced; a **Paused** rule is saved but ignored. Pause a rule to stop it
-without deleting it.
+- Set the rule to **Testing**, then click **Open test checkout**. It opens your store with a sample
+  product in the cart, marked as a test, so rules in **Testing** apply too.
+- If a rule blocks the product as it is added to the cart, Shopify shows its own "Something went
+  wrong" page — your message is under **What happened?**.
+- When it behaves as you expect, switch the rule to **Active**.
 
 ## Is it live? "Live in checkout"
 Each rule shows a **Live in checkout** status. If a rule isn't blocking, open the
 **Why isn't it blocking?** panel. Common causes:
 - The new permission hasn't been approved yet.
-- The rule is **Paused**.
+- The rule is a **Draft**, or in **Testing** (it then blocks only test checkouts).
 - The scope doesn't match the products in the cart.
 - The property name is spelled differently from the one in the product page form.
-- The rules are over the limits (below).
+- The rules don't fit in checkout (below).
 
-## Limits
-- All your rules combined must stay under about **9 KB** once compiled.
-- Across your **Active** rules you can use at most **4 different line item property names**,
-  **2 different collection selections** and **2 different tag selections**.
+## Does it fit in checkout?
+Shopify runs your rules in a checkout function with a fixed amount of room. The **Does it fit in
+checkout?** section on the Checkout rules page shows how much is used:
 
-A rule that goes over shows a clear message telling you what to reduce.
+| Bar | Limit |
+|---|---|
+| Rules | 60 saved rules, Drafts included |
+| Line item property names | 4 different names across Active and Testing rules |
+| Collection selections | 2 different selections across Active and Testing rules |
+| Tag selections | 2 different selections across Active and Testing rules |
+| Rule size | Messages and long product lists take space; shown as a percentage |
+
+**Draft** rules take no room. When a bar is nearly full it turns to a warning; when it is full, new
+rules can't be turned on. Make room by setting a rule you don't need to **Draft** or deleting it,
+reusing a property name, collection or tag selection that a rule already uses, shortening messages,
+or listing fewer products.
 
 ## Where customers see the message
 - **Checkout:** the message appears at the top of the page and checkout can't continue.
@@ -100,14 +122,15 @@ A rule that goes over shows a clear message telling you what to reduce.
 
 ## Troubleshooting
 **The rule doesn't block anything.** Check the **Why isn't it blocking?** panel, then test with
-**Open test checkout**.
+**Open test checkout** (set the rule to **Testing** first if you don't want to affect customers).
 
 **It blocks even though the field is filled in.** The property name in the rule probably differs
 from the product page form (capital letters and spaces count).
 
-**I can't turn a rule on.** On the **Free** plan only one rule can be **Active** at a time —
-pause another or upgrade to **Pro**.
+**I can't turn a rule on.** On the **Free** plan only one block or rule can be **Active** at a
+time. Choose which one stays active, keep the rule in **Testing**, or upgrade to **Pro**.
 
-**I see a "too many" message.** You are over a limit above — pause or merge some rules.
+**A capacity bar is full.** See **Does it fit in checkout?** above — set some rules to **Draft** or
+reuse the same property names, collections and tags.
 
 More help: [FAQ & troubleshooting](faq-troubleshooting.md), or see [Getting started](getting-started.md).
