@@ -29,19 +29,23 @@ fields below, and you can still change them.
 
 | Source | What it fills in |
 |---|---|
-| **LoyaltyLion** | Points from `loyaltylion.points_total`. The rank is left blank; pick LoyaltyLion's tier field under **Member rank** if you have one. |
+| **LoyaltyLion** | Points from `loyaltylion.points_total` and rank from `loyaltylion.loyalty_tier`. The tier field only exists if your LoyaltyLion program has tiers (Classic plan or above). |
 | **Rivo (legacy JSON metafield)** | Points from the `points_balance` key and rank from the `vip_tier` key of Rivo's legacy JSON customer metafield (`custom.rivo`). |
+| **Smile.io (VIP tier only)** | Rank from `smile.vip_tier_name`. Points are left blank. |
 | **Custom metafield** | Nothing is filled in. Pick any customer metafield yourself. |
 
-For either app:
-1. Turn on the app's own **Shopify metafield sync**, so the values are written to your customers.
+For any of them:
+1. Turn on the app's own metafield sync, so the values are written to your customers: LoyaltyLion's
+   **Shopify metafield sync**, Rivo's legacy JSON metafield sync, or **VIP metafield sync** in Smile.
 2. In **Settings → Custom data → Customers**, check the field's name (change it in Optimalify if
-   yours differs) and set **Customer account access** to **Read**. Without it, customers see nothing.
+   yours differs). You may need to create a definition for it. Set **Customer account access** to
+   **Read**. Without it, customers see nothing.
 
-Rivo's newer one-field-per-value metafields belong to Rivo, so Member wallet can't read them.
+**Rivo:** Rivo's newer sync stores its values in a Rivo-reserved namespace that other apps can't
+read, so keep Rivo's legacy JSON metafield sync turned on.
 
-**Smile.io isn't supported yet.** Smile doesn't document syncing points to customer metafields,
-which this block reads.
+**Smile.io:** Smile syncs only the **VIP tier name** to a metafield. It doesn't sync the points
+balance, so points stay blank unless you pick another field.
 
 ### JSON metafields
 Some apps store several values in one **JSON** metafield, for example
@@ -61,7 +65,7 @@ the whole value, as before. A missing key hides that line.
 | Field | Notes |
 |---|---|
 | **Card title** | Leave blank to use the built-in title in each customer's language. |
-| **Loyalty app** | Pre-fills the points and rank fields for LoyaltyLion or Rivo. **Custom metafield** leaves them as they are. |
+| **Loyalty app** | Pre-fills the points and rank fields for LoyaltyLion, Rivo or Smile.io. **Custom metafield** leaves them as they are. |
 | **Points metafield** | Customer metafield as `namespace.key`, e.g. `custom.loyalty_points`. Blank hides points. |
 | **Rank metafield** | Customer metafield as `namespace.key`, e.g. `custom.member_rank`. Blank hides the rank. |
 | **JSON key** | Optional, under **Advanced** of each field. The key to read when the metafield holds JSON, e.g. `points_balance`. |
