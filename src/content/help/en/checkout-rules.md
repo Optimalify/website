@@ -89,7 +89,8 @@ Each rule shows its state as a badge. To change it, open the rule's **⋮** menu
 - Set the rule to **Testing**, then click **Open test checkout**. It opens checkout with only the sample
   product, marked as a test, so rules in **Testing** apply too. Your own cart in that browser is
   replaced, not added to.
-- If a rule blocks it, Shopify shows your message in checkout, or on its own error page (which may repeat it).
+- A **Testing** rule shows its message at the top of checkout. An **Active** rule may also stop the add-to-cart
+  step, where Shopify shows its own error page or sends you back to your store.
 - When it behaves as you expect, switch the rule to **Active**.
 
 ## Is it live? "Live in checkout"
