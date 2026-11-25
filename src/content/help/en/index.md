@@ -30,6 +30,7 @@ customer account pages](add-blocks-in-editor.md)**.
 | [Content section](rich-content.md) | An image, heading, text and button to promote or inform |
 | [Buy again](buy-again.md) | A most-purchased products grid and a Buy this again button on each order line |
 | [Member wallet](member-wallet.md) | A loyalty card with points, rank and a membership QR code |
+| [Checkout rules](checkout-rules.md) | Block checkout with a clear message when the cart breaks a rule |
 | [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
 | [Translate your blocks](translations.md) | Show block text in each customer's language |
 | [FAQ & troubleshooting](faq-troubleshooting.md) | Common questions and fixes (e.g. "my block doesn't show") |
