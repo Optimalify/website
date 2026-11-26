@@ -61,3 +61,5 @@ Open **Apps → Optimalify**:
   customer account on your store.
 
 Next: **[Add blocks to your pages →](add-blocks-in-editor.md)**
+
+Coming from legacy customer accounts? See **[what you lose and how to get it back](legacy-customer-accounts-migration.md)**.

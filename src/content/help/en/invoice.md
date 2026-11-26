@@ -48,3 +48,9 @@ subtotal, discounts, shipping, taxes, and the total — in the order's currency.
 Make sure the Invoice block is **Active**, the customer is **signed in**, and the order
 isn't cancelled. On the Free plan, remember only **one block** can be active at a time.
 More in [FAQ & troubleshooting](faq-troubleshooting.md).
+
+## See also
+
+- [Let customers download invoice PDFs from new customer accounts](invoice-download-new-customer-accounts.md)
+- [Moving from legacy to new customer accounts](legacy-customer-accounts-migration.md)
+- Japan: [qualified invoice walkthrough (Japanese)](https://optimalify.org/help/qualified-invoice-my-page)
