@@ -30,6 +30,8 @@ customer account pages](add-blocks-in-editor.md)**.
 | [Content section](rich-content.md) | An image, heading, text and button to promote or inform |
 | [Buy again](buy-again.md) | A most-purchased products grid and a Buy this again button on each order line |
 | [Member wallet](member-wallet.md) | A loyalty card with points, rank and a membership QR code |
+| [Download invoice PDFs from new customer accounts](invoice-download-new-customer-accounts.md) | Invoice PDF in the customer's language, with optional Japanese qualified invoice fields |
+| [Moving from legacy to new customer accounts](legacy-customer-accounts-migration.md) | What you lose when you switch, and the block that brings each piece back |
 | [Checkout rules](checkout-rules.md) | Block checkout with a clear message when the cart breaks a rule |
 | [Starter packs](starter-packs.md) | Set up a goal's worth of blocks in one click |
 | [Translate your blocks](translations.md) | Show block text in each customer's language |
