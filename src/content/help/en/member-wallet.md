@@ -8,6 +8,8 @@ Show members where they stand. **Member wallet** is a card with the customer's *
 balance**, their **member rank**, and an optional **QR code** that staff can scan in a physical
 shop.
 
+[Watch the demo: Member wallet, loyalty points and rank](https://youtu.be/64FpuszT4u8)
+
 ## Where it appears
 The **Profile** and **Orders** pages. Add the **Optimalify Member wallet** block wherever you
 want it in the editor.

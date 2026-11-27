@@ -9,6 +9,8 @@ every order in their new customer account. Optimalify's **Invoice download** blo
 (The older, legacy accounts are being replaced — see
 [Moving from legacy to new customer accounts](legacy-customer-accounts-migration.md).)
 
+[Watch the demo: Invoice PDF in customer accounts, in your customer's language](https://youtu.be/l3LG1Mo0ggs)
+
 ## What customers see
 
 A **Download invoice** action in the order's action menu on the **Orders** and **Order

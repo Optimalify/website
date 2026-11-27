@@ -42,6 +42,38 @@ function remarkInstallLink() {
 }
 
 /**
+ * A paragraph that is just a YouTube link becomes a click-to-load video: a local thumbnail
+ * (public/img/video/<id>.jpg) that swaps for a youtube-nocookie iframe on click (script in
+ * HelpLayout). Nothing is requested from YouTube until the reader presses play. In the raw
+ * `/help/<slug>.md` file it stays an ordinary link, so the Markdown still reads well.
+ */
+function remarkYoutubeFacade() {
+  const url = /^https:\/\/(?:youtu\.be\/|www\.youtube\.com\/watch\?v=)([\w-]{11})(?:[?&#].*)?$/;
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  return (tree) => {
+    visit(tree, 'paragraph', (node, index, parent) => {
+      const link = node.children.length === 1 && node.children[0];
+      const id = link && link.type === 'link' ? url.exec(link.url)?.[1] : null;
+      if (!id || !parent || index === null) return;
+      let label = '';
+      visit(link, (n) => {
+        if (n.type === 'text') label += n.value;
+      });
+      label = esc(label);
+      parent.children[index] = {
+        type: 'html',
+        value:
+          `<figure class="yt-demo"><div class="yt-demo-frame" data-title="${label}">` +
+          `<a class="yt-demo-link" href="https://youtu.be/${id}" data-yt="${id}" target="_blank" rel="noopener">` +
+          `<img src="/img/video/${id}.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">` +
+          `<span class="yt-demo-play" aria-hidden="true"></span><span class="yt-demo-label">${label}</span>` +
+          `</a></div></figure>`,
+      };
+    });
+  };
+}
+
+/**
  * Wide Markdown tables must scroll inside their own box rather than pushing the
  * page sideways on a phone.
  */
@@ -75,7 +107,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: [remarkRewriteHelpLinks, remarkInstallLink],
+    remarkPlugins: [remarkRewriteHelpLinks, remarkInstallLink, remarkYoutubeFacade],
     rehypePlugins: [rehypeWrapTables],
     shikiConfig: {theme: 'github-light'},
   },

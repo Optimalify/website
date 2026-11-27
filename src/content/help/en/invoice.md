@@ -8,6 +8,8 @@ Let customers download a **PDF invoice** for any order, straight from their acco
 more "can you send me an invoice?" support emails. A **Download invoice** action appears in
 the order's action menu on the **Orders** and **Order status** pages.
 
+[Watch the demo: Invoice PDF in customer accounts, in your customer's language](https://youtu.be/l3LG1Mo0ggs)
+
 ## Set it up
 
 1. **Apps → Optimalify → Blocks → Invoice download**.
