@@ -9,6 +9,8 @@ pages your customers see after they log in (Orders, Order status, and Profile). 
 code, no developers: you configure everything in the app and place the blocks in Shopify's
 editor.
 
+[Watch the demo: Optimalify in 60 seconds](https://youtu.be/F6etoNliUQY)
+
 ## What you can add
 
 - **Announcement banner** — announcements (sales, shipping notices, policy updates) on the Orders and

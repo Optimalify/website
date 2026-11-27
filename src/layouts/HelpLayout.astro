@@ -59,6 +59,25 @@ const rawHref = L(isHome ? '/help/index.md' : `/help/${slug}.md`);
   </div>
 </BaseLayout>
 
+<script>
+  // Swap a demo-video thumbnail for the player when it is clicked (no YouTube request before that).
+  // Modified clicks (new tab) keep the plain link; without JS the link opens YouTube.
+  document.addEventListener('click', (e) => {
+    const link = (e.target as Element).closest<HTMLAnchorElement>('a.yt-demo-link');
+    if (!link || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    const frame = link.parentElement!;
+    const player = document.createElement('iframe');
+    player.src = `https://www.youtube-nocookie.com/embed/${link.dataset.yt}?autoplay=1&rel=0&playsinline=1`;
+    player.title = frame.dataset.title || 'Video';
+    player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    player.allowFullscreen = true;
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.replaceChildren(player);
+    player.focus();
+  });
+</script>
+
 <style>
   .help-shell {
     display: grid; grid-template-columns: 232px minmax(0, 1fr);

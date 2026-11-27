@@ -7,6 +7,8 @@ order: 15
 Customers see the account pages in the language they shop in. Optimalify shows each block's
 text in that language when you've translated it, and your original text when you haven't.
 
+[Watch the demo: Translated announcement banners](https://youtu.be/ntw6J4YrZnQ)
+
 ## What gets translated
 - **Built-in wording** — buttons and default labels such as "Download invoice" — comes
   translated in English, Japanese, Vietnamese, German, French, Spanish, Dutch and Italian. Nothing to set up.

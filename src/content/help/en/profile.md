@@ -8,6 +8,8 @@ Let logged-in customers save a few useful details about themselves — **birthda
 size**, and **contact preferences**. This is zero-party data customers give you directly,
 perfect for birthday offers, better size recommendations, and respectful marketing.
 
+[Watch the demo: Birthday, VAT number and custom fields](https://youtu.be/swVcmFf7-YI)
+
 ## Where it appears
 The **Profile** page (and optionally **Orders** and **Order status**). Add the **Optimalify
 Profile fields** block in the customer account editor.

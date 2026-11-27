@@ -11,6 +11,8 @@ transfer**, and apps that relied on legacy Liquid account pages don't work on th
 accounts. This page lists what stores usually miss and how to rebuild each piece with
 Optimalify blocks, in the customer account editor, with no theme code.
 
+[Watch the demo: What to replace as legacy customer accounts go away](https://youtu.be/KswMcz5rKlM)
+
 > **About dates:** Shopify has said a final sunset date for legacy accounts will be announced
 > later in 2026. When we last checked (10 November 2026) none was published, so we don't give
 > one. See [Shopify's changelog](https://shopify.dev/changelog/posts/legacy-customer-accounts-are-deprecated)

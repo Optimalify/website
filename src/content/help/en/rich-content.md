@@ -7,6 +7,8 @@ order: 13
 Add a promo card, a story, or a campaign to the account pages: an image, a heading, a short
 text, and an optional button.
 
+[Watch the demo: Schedule a promo and target it by customer tag](https://youtu.be/ElajAw5uIbE)
+
 ## Where it appears
 **Order status**, **Orders**, **Profile**, and the **footer**. Add the **Optimalify Content section** block where you want it in the editor.
 

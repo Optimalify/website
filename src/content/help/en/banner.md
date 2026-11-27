@@ -8,6 +8,8 @@ Show announcements on your customers' **Orders** and **Order status** pages — 
 shipping notices, policy updates, or a welcome message. Banner copy is shown
 exactly as you write it.
 
+[Watch the demo: Translated announcement banners](https://youtu.be/ntw6J4YrZnQ)
+
 ## Where it appears
 Orders (order index) and Order status pages. You choose which page(s) to place it on in the
 editor — see [Add blocks to your pages](add-blocks-in-editor.md).
